@@ -24,19 +24,19 @@
   
   </style>
 </head>
-<body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index">
+<body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index container-fluid">
   
-<div id="card-form" class="conteiner fluid">
+<div id="card-form" class="container">
   <div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
+    <div class="col-4 m-sm-1"></div>
+    <div class="col-4 sm-10">
       <div  class="card border border-1 ">
         <img src="images/logo_login.png" class="card-img-top">
           <div class="card-body">
             <div class="form-group">
               <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+              <div class="col-1"> </div>
+                <div class="col-10 ">
                   <form method="post" action="lib/autentica.php">
                   <label class="ls-label">
                   <b class="text-success"> Usuário </b>
@@ -56,7 +56,7 @@
 
                   </form>
                 </div>
-                <div class="col-2"></div>
+                <div class="col-1"> </div>
                 </div>
             </div>
           </div>
