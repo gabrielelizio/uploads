@@ -1,12 +1,12 @@
 *{margin: 0; padding: 0;}
 
 body{
-    height: 800px;
+    height: 760px;
     background: url(../images/bg_login.jpg);
-    background-size: 1360px;
+    background-repeat: no-repeat;
 }
 
 
 #card-form{
-    padding-top: 150px;
+    padding-top: 190px;
 }
