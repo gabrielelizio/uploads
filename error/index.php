@@ -11,13 +11,15 @@ include_once("../lib/conexao_banco.php");
   <head>
     <title><?php echo "$vg_title";?></title>
 
-    <meta charset="<?php echo $vg_charset;?>">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="description" content="">
-    <link href="../stylesheets/locastyle.css" rel="stylesheet" type="text/css">
-    <link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
-    <link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
+		<meta charset="<?php echo $vg_charset;?>">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="">
+		<link href="../stylesheets/locastyle.css" rel="stylesheet" type="text/css">
+		<link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
+		<link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../css/all.min.css">
 
  </head>
   <body>
@@ -25,23 +27,6 @@ include_once("../lib/conexao_banco.php");
 
 <?php  include_once("../notification_bars.php"); ?>
 
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#" class="ls-ico-earth">
-        <small><?php echo "$vg_title";?></small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
-</div>
-
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
 
 <?php
   if($_SESSION["nivel"] == 1){
@@ -50,15 +35,18 @@ include_once("../lib/conexao_banco.php");
       require_once("../menu-sicp.php");
   }
 ?>
+<div class="pt-2"></div>
+	<div class=" container-fluid pt-5">
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Upload de Provas </h1>
+	</div>
+	<div class="container pt-5">
 
 
-  </div>
-</aside>
 
     <main class="ls-main ">
       <div class="container-fluid">
         <h1 class="ls-title-intro ls-ico-checkmark-circle">Erros / Pendências no Envio</h1>
-        
+
 <form  action="busca-registro.php" class="ls-form ls-form-inline ls-float-left">
     <label style="width: 70%;" class="ls-label" role="search">
       <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" class="ls-field">
@@ -67,7 +55,7 @@ include_once("../lib/conexao_banco.php");
       <input style="margin-top: -13px;" type="submit" value="Buscar" class="ls-btn" title="Buscar">
     </div>
 </form>
-  
+
     <table class="ls-table ls-sm-space">
   <thead>
     <tr>
@@ -113,8 +101,8 @@ $data_processamento = $linha["data_processamento"];
 
 $diferenca_hora = diferenca_data($data_envio);
 if($diferenca_hora <= 12){ $cor="class='ls-tag-success'";}
-if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"; }  
-if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }  
+if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"; }
+if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }
 
 
 
@@ -125,13 +113,13 @@ if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }
 
 
 if($_SESSION["nivel"] == 1){
-   
+
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
+
         </td>
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td>
@@ -147,14 +135,14 @@ echo "
   </tbody>";
 
   }else{
-   
-  
+
+
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
+
         </td>
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td></td>

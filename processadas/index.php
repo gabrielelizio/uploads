@@ -1,5 +1,5 @@
 <?php
- 
+
 include_once("../lib/verifica-login.php");
 include_once("../variables_global.php");
 include_once("../lib/funcoes.php");
@@ -19,33 +19,14 @@ include_once("../lib/conexao_banco.php");
     <link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
 
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+
  </head>
   <body>
-    <div class="ls-topbar ">
 
 <?php  include_once("../notification_bars.php"); ?>
 
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#" class="ls-ico-earth">
-        <small><?php echo "$vg_title";?></small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
-</div>
-
-   
-
-
-
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
 
 <?php
   if($_SESSION["nivel"] == 1){
@@ -56,18 +37,11 @@ include_once("../lib/conexao_banco.php");
 ?>
 
 
+	<div class=" container-fluid pt-5">
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Arquivos Realizados </h1>
+	</div>
+	<div class="container pt-5">
 
-  </div>
-</aside>
-
-
-
-
-    <main class="ls-main ">
-      <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-checkmark-circle">Solicitações Processadas</h1>
-
-   
 <form  action="busca-registro_processada.php" class="ls-form ls-form-inline ls-float-left">
     <label style="width: 70%;" class="ls-label" role="search">
       <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" class="ls-field">
@@ -109,7 +83,7 @@ display: inline-block;
  if($_SESSION["nivel"] == 1){
    $sql = "SELECT * FROM uploads where id_prof = '$id' AND status='Impresso' order by id desc";
   }else{
-  $sql = "SELECT * FROM uploads where  status='Impresso' order by id desc";   
+  $sql = "SELECT * FROM uploads where  status='Impresso' order by id desc";
   }
 
 
@@ -132,7 +106,7 @@ echo "
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
+
         </td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>

@@ -17,9 +17,9 @@
 			<link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
 			<link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
 			<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-  			<link rel="stylesheet" href="../css/all.min.css">
+  		<link rel="stylesheet" href="../css/all.min.css">
 			<style>
-				
+
 			</style>
 		</head>
 		<body>
@@ -31,16 +31,16 @@
 				require_once("../menu-sicp.php");
 		}
 	?>
-		
+
 	<!--	<nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu" >
             <span class="navbar-toggler-icon"></span>
 		</button>
-		
+
             <div id="menu" class="collapse navbar-collapse container">
                 <ul class="navbar-nav ml-md-auto">
-                    
+
 					<li class="nav-item">
                         <a class="nav-link"  href="#"> <h6> Processando </h6> </a>
 					</li>
@@ -50,7 +50,7 @@
                     <li class="nav-item">
                         <a class="nav-link"  href="#"> <h6> Erros </h6> </a>
 					</li>
-					
+
 					<li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
@@ -62,7 +62,7 @@
 					<li class="nav-item">
                         <a class="nav-link"  href="#"> <h6></h6> </a>
 					</li>
-					
+
                 </ul>
 			</div>
 	</nav>
@@ -73,7 +73,7 @@
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Upload de Provas </h1>
 	</div>
 	<div class="container pt-5">
-					
+
 
 		<div class="row">
 			<div class="col-1"></div>
@@ -96,12 +96,12 @@
 			</div>
 			<div class="col-1"></div>
 		</div>
-	
+
 		<hr>
 
 	<div class="row">
 		<b class="ls-label-text col-12" >Para cadastrar um novo Curso, informe o nome abaixo:</b>
-	</div>	
+	</div>
 <!--<
 	<fieldset>
 		<div class="ls-label col-md-5">
@@ -118,175 +118,175 @@
 		</div>
 
 		<div class="row">  <!-- Linha 1 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Administracao">
 					Administração
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Eng. eletrica">
 					Eng. Elétrica
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Eng. Mecanica">
 					Eng. Mecânica
 				</label>
 			</div>
-				
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Redes">
 					Redes Comp.
 				</label>
-			</div>		
+			</div>
 		</div>
 
 		<div class="row"> <!-- Linha 2 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Arquitetura">
 					Arquitetura e Urbanismo
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Contabeis">
 					Ciências Contábeis
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EngCivil">
 					Engenharia Civil
 				</label>
 			</div>
-				
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EngProducao">
 					Engenharia de Produção
 				</label>
-			</div>		
+			</div>
 		</div>
 
 		<div class="row"> <!-- Linha 3 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Enfermagem">
 					Enfermagem
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Fisioterapia">
 					Fisioterapia
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div cl		ass="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EduFisica">
 					Educação Física
 				</label>
 			</div>
-				
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoComercial">
 					Gestão Comercial
 				</label>
-			</div>		
+			</div>
 		</div>
 
 		<div class="row"> <!-- Linha 4 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoRH">
 					Gestão de RH
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoFinanceira">
 					Gestão Financeira
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Logística">
 					Logística
 				</label>
 			</div>
-				
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoMarketing">
 					Gestão em Marketing
 				</label>
-			</div>		
+			</div>
 		</div>
 
 		<div class="row"> <!-- Linha 5 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="ConstrucaoEdificios">
 					Construção de Edifícios
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="SistemasInformacao">
 					Sistemas de Informação
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Mecatronica Industrial">
 					Mecatrônica
 				</label>
 			</div>
-				
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="ProducaoIndustrial">
 					G. da Produção Industrial
 				</label>
-			</div>		
+			</div>
 		</div>
 
 		<div class="row"> <!-- Linha 5 -->
-			<div class="col-3">  
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="SegurancaTrabalho">
 					Segurança no Trabalho
 				</label>
 			</div>
-			
-			<div class="col-3">  
+
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="PosGraduacao">
 					Pós Graduação
 				</label>
 			</div>
 
-			<div class="col-3">  
+			<div class="col-3">
 			</div>
-				
-			<div class="col-3">  
-			</div>		
+
+			<div class="col-3">
+			</div>
 		</div>
 
 <!-- Fim da tabela de cursos  ################################################################### -->
