@@ -19,29 +19,12 @@ include_once("../lib/conexao_banco.php");
     <link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
 
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+    
  </head>
   <body>
-    <div class="ls-topbar ">
 
-<?php  include_once("../notification_bars.php"); ?>
-
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#" class="ls-ico-earth">
-        <small><?php echo "$vg_title";?></small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
-</div>
-
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
 
 <?php
   if($_SESSION["nivel"] == 1){
@@ -51,33 +34,37 @@ include_once("../lib/conexao_banco.php");
   }
 ?>
 
-
-  </div>
-</aside>
-
-    <main class="ls-main ">
-      <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-checkmark-circle">Processamento dos Arquivos / Impressão</h1>
-        
-<form  action="busca-registro.php" class="ls-form ls-form-inline ls-float-left">
-    <label style="width: 70%;" class="ls-label" role="search">
-      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" class="ls-field">
-    </label>
-    <div class="ls-actions-btn">
-      <input style="margin-top: -13px;" type="submit" value="Buscar" class="ls-btn" title="Buscar">
+<div class="pt-2"></div>
+	<div class=" container-fluid pt-5">
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Processamento dos Arquivos / Impressão </h1>
+	</div>
+	<div class="container pt-5">
+  
+  <div class="row">
+      <div class="col-6">
+        <form  action="busca-registro.php" class="form-row">
+        <label style="width: 70%;" class="ls-label" role="search">
+          <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
+        </label>
+    <div class="btn">
+      <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success btn-sm" title="Buscar">
     </div>
 </form>
-  
-    <table class="ls-table ls-sm-space">
-  <thead>
+      </div>
+  </div>
+<hr>
+  <div class="row pt-5">
+    <table class="table table-striped pt-5">
+  <thead class="bg-success">
     <tr>
-      <th>Professor</th>
-      <th class="ls-txt-center">E-mail</th>
-      <th class="ls-txt-center">Data envio</th>
-      <th class="ls-txt-center">Curso</th>
-      <th class="ls-txt-center">Quantidade</th>
-      <th class="ls-txt-center">Opção</th>
-      <th class="ls-txt-center">Arquivo</th>
+      <th class="text-center text-light">Professor</th>
+      <th class="text-center text-light text-primary">E-mail</th>
+      <th class="text-center text-light text-primary">Data envio</th>
+      <th class="text-center text-light text-primary">Curso</th>
+      <th class="text-center text-light text-primary">Quantidade</th>
+      <th class="text-center text-light text-primary">Opção</th>
+      <th class="text-center text-light text-primary">Arquivo</th>
+     <!-- <th class="text-center text-light text-primary">Excluir</th>  add opção de excluir registro -->  
       <th></th>
     </tr>
   </thead>
@@ -89,7 +76,6 @@ if($_SESSION["nivel"] == 1){
   }else{
    $sql = "SELECT * FROM uploads where status='Pendente' order by data_envio desc";
   }
-
 
 
 
@@ -116,13 +102,6 @@ if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"
 if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }  
 
 
-
-
-
-
-
-
-
 if($_SESSION["nivel"] == 1){
    
 echo "
@@ -130,10 +109,9 @@ echo "
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td>
+        <td class='ls-txt-center'><a href='#' $cor> $data_envio</a></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
@@ -144,17 +122,16 @@ echo "
   </tbody>";
 
   }else{
-   
+  
   
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td></td>
+        <td class='ls-txt-center'><a href='#' $cor>  $data_envio </a></td></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
@@ -170,10 +147,8 @@ echo "
 
 ?>
 </table>
+</div>
 
-
-      </div>
-    </main>
 
   <?php include_once("../notification_message.php"); ?>
 
@@ -181,5 +156,6 @@ echo "
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>

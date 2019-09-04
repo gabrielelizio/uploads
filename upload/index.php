@@ -23,18 +23,24 @@
 			</style>
 		</head>
 		<body>
+
+		<?php
+		if($_SESSION["nivel"] == 1){
+				require_once("../menu-professor.php");
+		}else{
+				require_once("../menu-sicp.php");
+		}
+	?>
 		
-		<nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
+	<!--	<nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu" >
             <span class="navbar-toggler-icon"></span>
-        </button>
-            <!-- Linkss -->
+		</button>
+		
             <div id="menu" class="collapse navbar-collapse container">
                 <ul class="navbar-nav ml-md-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#"> <h6> #Dashboard </h6> </a>
-					</li>
+                    
 					<li class="nav-item">
                         <a class="nav-link"  href="#"> <h6> Processando </h6> </a>
 					</li>
@@ -60,6 +66,8 @@
                 </ul>
 			</div>
 	</nav>
+
+	-->
 	<div class="pt-2"></div>
 	<div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Upload de Provas </h1>
@@ -88,7 +96,7 @@
 			</div>
 			<div class="col-1"></div>
 		</div>
-
+	
 		<hr>
 
 	<div class="row">

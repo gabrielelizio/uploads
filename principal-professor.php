@@ -27,27 +27,14 @@ exit;
     <link rel="apple-touch-icon" href="images/ico-boilerplate.png">
   </head>
   <body>
-    <div class="ls-topbar ">
 
-<?php  include_once("notification_bars.php"); ?>
-
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#"" class="ls-ico-earth">
-        <small>Uploads</small>
-        Provas
-      </a>
-    </h1>
 
   <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
 </div>
 
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
+<div id="menu" class="collapse navbar-collapse container">
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item active"></li>
 
 <?php include("menu-professor.php");  ?>
 
