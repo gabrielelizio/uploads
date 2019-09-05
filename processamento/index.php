@@ -36,7 +36,7 @@ include_once("../lib/conexao_banco.php");
 
 <div class="pt-2"></div>
 	<div class=" container-fluid pt-5">
-	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Processamento dos Arquivos / Impressão </h1>
+	<h1 class="ls-title-intro ls-ico-checkmark-circle pl-5 text-right "> Processamento dos Arquivos / Impressão </h1>
 	</div>
 	<div class="container pt-5">
   
@@ -54,7 +54,7 @@ include_once("../lib/conexao_banco.php");
   </div>
 <hr>
   <div class="row pt-5">
-    <table class="table table-striped pt-5">
+    <table class="table table-striped table-hover pt-5">
   <thead class="bg-success">
     <tr>
       <th class="text-center text-light">Professor</th>

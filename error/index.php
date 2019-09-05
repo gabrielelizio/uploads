@@ -37,35 +37,38 @@ include_once("../lib/conexao_banco.php");
 ?>
 <div class="pt-2"></div>
 	<div class=" container-fluid pt-5">
-	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Upload de Provas </h1>
+	<h1 class="ls-title-intro ls-ico-close pl-5 text-center"> Erros / Pendências no Envio </h1>
 	</div>
-	<div class="container pt-5">
 
-
-
-    <main class="ls-main ">
-      <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-checkmark-circle">Erros / Pendências no Envio</h1>
-
-<form  action="busca-registro.php" class="ls-form ls-form-inline ls-float-left">
+<div class="container pt-5">
+      
+<div class="row pt-5">
+    <div class="col-6">
+    <form  action="busca-registro.php" class="form-row">
     <label style="width: 70%;" class="ls-label" role="search">
-      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" class="ls-field">
+      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." 
+      placeholder="Faça sua busca..." autocomplete="off" required="" class="form-control">
     </label>
-    <div class="ls-actions-btn">
-      <input style="margin-top: -13px;" type="submit" value="Buscar" class="ls-btn" title="Buscar">
+    <div class="btn">
+      <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success" title="Buscar">
     </div>
 </form>
+    </div>
+</div>
 
-    <table class="ls-table ls-sm-space">
-  <thead>
+
+<div class="row pt-3">
+
+    <table class="table table-striped table-hover">
+  <thead class="bg-success">
     <tr>
-      <th>Professor</th>
-      <th class="ls-txt-center">E-mail</th>
-      <th class="ls-txt-center">Data envio</th>
-      <th class="ls-txt-center">Curso</th>
-      <th class="ls-txt-center">Quantidade</th>
-      <th class="ls-txt-center">Opção</th>
-      <th class="ls-txt-center">Arquivo</th>
+      <th class="text-center text-light">Professor</th>
+      <th class="text-center text-light">E-mail</th>
+      <th class="text-center text-light">Data envio</th>
+      <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Quantidade</th>
+      <th class="text-center text-light">Opção</th>
+      <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
   </thead>
@@ -77,9 +80,6 @@ if($_SESSION["nivel"] == 1){
   }else{
    $sql = "SELECT * FROM uploads where status='Erros' order by data_envio desc";
   }
-
-
-
 
 
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
@@ -103,14 +103,6 @@ $diferenca_hora = diferenca_data($data_envio);
 if($diferenca_hora <= 12){ $cor="class='ls-tag-success'";}
 if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"; }
 if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }
-
-
-
-
-
-
-
-
 
 if($_SESSION["nivel"] == 1){
 
@@ -162,9 +154,8 @@ echo "
 ?>
 </table>
 
-
-      </div>
-    </main>
+</div>
+</div>
 
   <?php include_once("../notification_message.php"); ?>
 
@@ -172,5 +163,6 @@ echo "
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -99,8 +99,8 @@ function logs ( $COD_USUARIOS_SISTEMA , $TIPO_LOGS , $ACAO ,$IP )
  include ("conexao_banco.php");
 
 date_default_timezone_set('America/Sao_Paulo');
-$hora=date("Y-m-d H:i:s");
-$data=date("Y-m-d");
+$hora=date("d-m-Y H:i:s");
+$data=date("d-m-Y");
 
 $sql = "insert into logs_2(COD_USUARIOS_SISTEMA,DATA_LOGS,HORA_LOGS,TIPO_LOGS,ACAO,IP_LOGS) 
 VALUES ('$COD_USUARIOS_SISTEMA','$data','$hora','$TIPO_LOGS','$ACAO','$IP')";

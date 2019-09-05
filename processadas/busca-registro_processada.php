@@ -22,29 +22,13 @@ error_reporting(0);
     <link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
 
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css">
+
  </head>
   <body>
-    <div class="ls-topbar ">
+    
 
-<?php  include_once("../notification_bars.php"); ?>
-
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#" class="ls-ico-earth">
-        <small><?php echo "$vg_title";?></small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
-</div>
-
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
 
 <?php
   if($_SESSION["nivel"] == 1){
@@ -54,44 +38,40 @@ error_reporting(0);
   }
 ?>
 
-
-  </div>
-</aside>
-
-    <main class="ls-main ">
-      <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-checkmark-circle">Processamento dos Arquivos / Impressão</h1>
-        <style>
-        	.voltar{
-        		background: #ef7736;
-			    padding: 10px;
-			    display: inline-block;
-			    margin-bottom: 10px;
-			    border-radius: 5px;
-			    color: #FFF;
-        	}
-        </style>
-        <a class="voltar" href="index.php">Voltar a lista de registros</a> <br>
-        
-<form  action="busca-registro_processada.php" class="ls-form ls-form-inline ls-float-left">
+<div class=" container-fluid pt-5">
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center ls-ico-checkmark-circle "> Processamento dos Arquivos / Impressão</h1>
+</div>
+      
+<div class="container pt-5">
+  <div class="row pt-5">
+    <div class="col-7">
+    <form  action="busca-registro_processada.php" class="form-row">
     <label style="width: 70%;" class="ls-label" role="search">
-      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de rastreio" placeholder="N° do Código de rastreio" required="" class="ls-field">
+      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de rastreio" 
+      placeholder="N° do Código de rastreio" autocomplete="off" required="" class="form-control">
     </label>
-    <div class="ls-actions-btn">
-      <input style="margin-top: -13px" type="submit" value="Buscar" class="ls-btn" title="Buscar">
+    <div class="btn">
+      <input style="margin-top:-13px" type="submit" value="Buscar" class="btn btn-outline-success " title="Buscar">
     </div>
 </form>
-  
-    <table class="ls-table ls-sm-space">
-  <thead>
+    </div>
+    <div class="col-4">
+    <a style="margin-top: -5px" class="voltar btn btn-danger ls-float-left-xs" href="index.php"> Voltar a lista de registros</a> 
+    </div>
+  </div>
+        
+  <div class="row pt-5"> 
+
+  <table class="table table-striped table-hover">
+  <thead class="bg-success">
     <tr>
-      <th>Professor</th>
-      <th class="ls-txt-center">E-mail</th>
-      <th class="ls-txt-center">Telefone</th>
-      <th class="ls-txt-center">Curso</th>
-      <th class="ls-txt-center">Quantidade</th>
-      <th class="ls-txt-center">Opção</th>
-      <th class="ls-txt-center">Arquivo</th>
+      <th class="text-center text-light">Professor</th>
+      <th class="text-center text-light">E-mail</th>
+      <th class="text-center text-light">Telefone</th>
+      <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Quantidade</th>
+      <th class="text-center text-light">Opção</th>
+      <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
   </thead>
@@ -141,8 +121,6 @@ echo "
   }else{
    
   
-
-
 echo "
 <tbody>
       <tr>
@@ -161,32 +139,20 @@ echo "
       </tr>
   </tbody>";
 }
-
-
-
-
-
-
-
-
-
-
 	}
 }
 
 ?>
 </table>
 
-
-      </div>
-    </main>
+</div>  
+</div>
 
   <?php include_once("../notification_message.php"); ?>
-
-
 
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>

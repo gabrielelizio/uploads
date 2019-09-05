@@ -35,40 +35,36 @@ error_reporting(0);
   }
 ?>
 
-<div class="pt-2"></div>
+<div class="pb-4"></div>
 	<div class=" container-fluid pt-5">
-	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Processamento dos Arquivos / Impressão </h1>
+	<h1 class="ls-title-intro ls-ico-checkmark-circle pl-5 text-center "> Processamento dos Arquivos / Impressão </h1>
 	</div>
-
-  <div class="row container">
-    <div class="col-3"></div>
-    <div class="col-6">
-      <a class="voltar btn btn-danger btn-group-lg" href="index.php">Voltar a lista de registros</a> <br>
-    </div>
-    <div class="col-3"></div>
-  </div>
-
-  <div class="row container pt-4">
-    <div class="col-3"></div>
+  <div class="pt-5"></div>
+  <div class="row container pt-5">
+    <div class="col-2"></div>
     <div class="col-7">
     <form  action="busca-registro.php" class="form-row">
     <label style="width: 70%;" class="" role="search">
       <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de 
       rastreio" placeholder="N° do Código de rastreio"  autocomplete="off" required="" class="form-control">
     </label>
-    <div>
-      <input type="submit" value="Buscar" class="btn btn-outline-success btn-sm" title="Buscar">
+    <div class="btn">
+      <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success btn-sm" title="Buscar">
       </div>
 </form>
     </div>
-    <div class="col-2"></div>
+    <div class="col-3"> 
+    <a class="voltar btn btn-danger btn-group-lg ls-float-left" href="index.php">Voltar a lista de registros</a> <br>
+    </div>
+    
+    
   </div>
     
   <hr class="pt-4">
 
   <div class="container">
   <div class="row pt-3">
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
   <thead class="bg-success">
     <tr>
       <th class="text-center text-light">Professor</th>

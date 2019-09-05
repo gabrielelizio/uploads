@@ -70,7 +70,7 @@
 	-->
 	<div class="pt-2"></div>
 	<div class=" container-fluid pt-5">
-	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Upload de Provas </h1>
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center "> Upload de Provas </h1>
 	</div>
 	<div class="container pt-5">
 
@@ -192,7 +192,7 @@
 				</label>
 			</div>
 
-			<div cl		ass="col-3">
+			<div class="col-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EduFisica">
 					Educação Física

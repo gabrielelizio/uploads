@@ -38,32 +38,39 @@ include_once("../lib/conexao_banco.php");
 
 
 	<div class=" container-fluid pt-5">
-	<h1 class="ls-title-intro ls-ico-upload pl-5 text-right "> Arquivos Realizados </h1>
-	</div>
+	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center"> Arquivos Realizados </h1>
+  </div>
+  
+
 	<div class="container pt-5">
 
-<form  action="busca-registro_processada.php" class="ls-form ls-form-inline ls-float-left">
-    <label style="width: 70%;" class="ls-label" role="search">
-      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" class="ls-field">
-    </label>
-    <div class="ls-actions-btn">
-      <input style="margin-top: -13px;" type="submit" value="Buscar" class="ls-btn" title="Buscar">
-    </div>
+  <div class="row pt-5">
+    <div class="col-8">
+    <form  action="busca-registro_processada.php" class="form-row">
+      <label style="width: 70%;" class="ls-label" role="search">
+        <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..."
+          placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
+      </label>
+      <div class="btn">
+        <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success" title="Buscar">
+      </div>
 </form>
+    </div>
+    <div class="col-2"></div>
+</div>
 
 
 
-
-
-        <table class="ls-table ls-sm-space">
-  <thead>
+<div class="row pt-2">
+<table class="table table-striped table-hover">
+  <thead class="bg-success">
     <tr>
-      <th>Professor</th>
-      <th class="ls-txt-center">Curso</th>
-      <th class="ls-txt-center">Quantidade</th>
-      <th class="ls-txt-center">Submissão</th>
-      <th class="ls-txt-center">Data Impressão</th>
-      <th class="ls-txt-center">Arquivo</th>
+      <th class="text-center text-light">Professor</th>
+      <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Quantidade</th>
+      <th class="text-center text-light">Submissão</th>
+      <th class="text-center text-light">Data Impressão</th>
+      <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
   </thead>
@@ -122,9 +129,8 @@ echo "
 ?>
 </table>
 
-
-      </div>
-    </main>
+    </div>
+  </div>
 
   <?php include_once("../notification_message.php"); ?>
 
@@ -132,5 +138,6 @@ echo "
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>
