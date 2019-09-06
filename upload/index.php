@@ -99,9 +99,9 @@
 
 		<hr>
 
-	<div class="row">
+	<!-- <div class="row">
 		<b class="ls-label-text col-12" >Para cadastrar um novo Curso, informe o nome abaixo:</b>
-	</div>
+	</div> -->
 <!--<
 	<fieldset>
 		<div class="ls-label col-md-5">
@@ -114,7 +114,7 @@
 	<fieldset> -->
 			<!-- Exemplo com Checkbox -->
 		<div class="row">
-		<p>Selecione o(s) cursos</p>
+		<p>Selecione o(s) cursos abaixo:</p>
 		</div>
 
 		<div class="row">  <!-- Linha 1 -->
@@ -294,8 +294,8 @@
 
 <div class="row pt-5">
 	<label class="ls-label col-4">
-		<b class="ls-label-text">Código das turmas</b>
-		<input class="form-control" type="text" name="codturmas" placeholder="Código da(s) turma(s)" required >
+		<b class="ls-label-text">Preencha o código dos cursos selecionados:</b>
+		<input class="form-control" type="text" name="codturmas" placeholder="Código do(s) curso(s)" required >
 	</label>
 </div>
 
@@ -347,7 +347,7 @@
 	<label class="ls-label col-10">
 		<div class="ls-prefix-group">
 			<span class="ls-label-text-prefix">Arquivo:</span>
-			<input  id="input-b1" name="arquivo[]" type="file" class="file" multiple>
+			<input  id="input-b1" name="arquivo[]" type="file" accept="application/pdf" class="file" multiple>
 		</div>
 	</label>
 </div>
