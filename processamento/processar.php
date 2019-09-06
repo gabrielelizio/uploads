@@ -30,30 +30,11 @@ $status  = htmlspecialchars($_REQUEST['status']);
     <link href="../stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="../images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="../images/ico-boilerplate.png">
-
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../css/all.min.css"> 
  </head>
   <body>
-    <div class="ls-topbar ">
-
-<?php  include_once("../notification_bars.php"); ?>
-
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="home" class="ls-ico-earth">
-        <small><?php echo "$vg_title";?></small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
-</div>
-
-<aside class="ls-sidebar">
-
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
+    
 
 <?php
   if($_SESSION["nivel"] == 1){
@@ -63,116 +44,114 @@ $status  = htmlspecialchars($_REQUEST['status']);
   }
 ?>
 
-
-  </div>
-</aside>
-
-    <main class="ls-main ">
-      <div class="container-fluid">
+  
+      <div class="container-fluid pt-5 text-right">
         <h1 class="ls-title-intro ls-ico-checkmark-circle">Detalhes do Processamento</h1>
-        <div class="ls-alert-warning"><strong>Atenção:</strong> Clique no botão Validar quando o processo de impressão for concluído.</div>
+      </div>
 
-        <div class="ls-box">
+      <div class="container"> 
+      <div class="row pt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+        <div class="ls-alert-warning ls-dismissable">
+          <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
+          <strong>Atenção:</strong> Clique no botão Validar quando o processo de impressão for concluído.
+        </div>
+        </div>
+      </div>
 
-
-  <form action="gravaprocesamento.php" method="post" class="ls-form row" data-ls-module="form">
-    <fieldset id="domain-form" class="ls-form-disable ls-form-text">
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Professor:</b>
-        <input type="text" value='<?php echo $nome;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">E-mail:</b>
-        <input type="text" value='<?php echo $email;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Telefone:</b>
-        <input type="text" value='<?php echo $telefone;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Quantidade de Impressões:</b>
-        <input type="text" value='<?php echo $qtdecopias;?>' required>
-      </label>
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Status:</b>
-        <input type="text" value='<?php echo $status;?>' required>
-      </label>
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Data de envio:</b>
-        <input type="text" value='<?php echo $data_envio;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Opção de impressão:</b>
-          <input type="text" value='<?php echo $opcaoimpressao;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Arquivo:</b>
-        <input type="text" value='<?php echo $patharq;?>' required>
-      </label>
-
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Cod. Rastreio:</b>
-        <input type="text" name="rastreio" value='<?php echo $rastreio;?>' required>
-      </label>
-
+  <div style="background-color: #f2f3ed;"  class="container row border border-dark pt-5">
+    <div class="col-3"></div>
+    <div class="col-8">
     
-    </fieldset>
+  <form action="gravaprocesamento.php" method="post" class="ls-form row" data-ls-module="form">
+    
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Professor:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $nome;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">E-mail:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $email;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Telefone:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $telefone;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Quantidade de Impressões:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $qtdecopias;?>' required>
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Status:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $status;?>' required>
+      </label>
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Data de envio:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $data_envio;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Opção de impressão:</b>
+          <input class=" form-control border border-success" type="text" value='<?php echo $opcaoimpressao;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Arquivo:</b>
+        <input class=" form-control border border-success" type="text" value='<?php echo $patharq;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Cod. Rastreio:</b>
+        <input class=" form-control border border-success" type="text" name="rastreio" value='<?php echo $rastreio;?>' required>
+      </label>
 
 
-
-<fieldset>
-<label class="ls-label col-md-12 col-sm-12">
-      <b class="ls-label-text">Situação</b>
-      <div class="ls-custom-select">
-        <select name="status" class="ls-select">
+<label class="ls-label col-md-8 col-sm-8">
+      <b class="text-success">Situação</b>
+      
+        <select name="status" class=" form-control border border-success">
           <option value="Impresso">Impresso</option>
           <option value="Erros">Erros</option>
           <option value="Pendente">Pendente</option>
         </select>
-      </div>
+  
     </label>
-    </fieldset>
-
-
-
+   
 
       <label class="ls-label col-md-6 col-lg-8">
-        <b class="ls-label-text">Observação:</b>
-        <textarea  name="observacao" cols="30" rows="5"></textarea>
+        <b class="text-success">Observação:</b>
+        <textarea class=" form-control border border-success" name="observacao" cols="30" rows="5"></textarea>
       </label>
-
-
-
 
     <div class="domain-actions ls-display-none">
       <button type="submit" class="ls-btn-primary">Salvar</button>
       <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" >Cancelar</button>
     </div>
-
-    <div class="ls-actions-btn">
-    <button class="ls-btn" name="rastreio" value='<?php echo $rastreio;?>'>Validar</button>
-    <button class="ls-btn-danger" name="cancelar">Cancelar</button>
+    
+    <label class="ls-label col-md-6 col-lg-8">
+    <div class=" text-center ls-actions-btn">
+    <button class="ls-btn ls-btn-primary pr-5 pl-5" name="rastreio" value='<?php echo $rastreio;?>'>Validar</button>
+    <button class="ls-btn-danger pr-5 pl-5" name="cancelar">Cancelar</button>
   </div>
-
-
-
+    </label>
   </form>
+
+
+</div> <!-- fim da coluna -->
+</div> <!-- fim da row -->
 </div>
 
-
-      </div>
-    </main>
-
+<div style="height:250px;"></div>
   <?php include_once("../notification_message.php"); ?>
 
 
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>
