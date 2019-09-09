@@ -1,6 +1,6 @@
 <?php
 
-include_once("../lib/verifica-login.php");  
+include_once("../lib/verifica-login.php");
 $mod_Title="Usuários";
 
 $mod_title_datagerid="Usuários";
@@ -12,22 +12,27 @@ $mod_width_heigth="width:700px;height:350px";
 <head>
     <meta charset="UTF-8">
     <title> <?php echo $mod_Title; ?>  </title>
-    <link rel="stylesheet" type="text/css" href="http://localhost/uploads/easyui/themes/bootstrap/easyui.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/uploads/easyui/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/uploads/easyui/themes/color.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/uploads/easyui/demo.css">
-   
-    <script type="text/javascript" src="http://localhost/uploads/easyui/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="http://localhost/uploads/easyui/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="../easyui/demo.css">
+
+		<script type="text/javascript" src="../easyui/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../easyui/jquery.easyui.min.js"></script>
+
 </head>
 <body>
-    
-    
-    
-    <table id="dg" title="<?php echo $mod_title_datagerid; ?>" class="easyui-datagrid" style="<?php echo $mod_width_heigth;?>"
-            url="get.php"
-            toolbar="#toolbar" pagination="true"
-            rownumbers="true" fitColumns="true" singleSelect="true">
+
+
+
+    <table id="dg" title="<?php echo $mod_title_datagerid; ?>"
+		class="easyui-datagrid" style="<?php echo $mod_width_heigth;?>"
+    url="get1.php"
+    toolbar="#toolbar"
+		pagination="true"
+    rownumbers="true"
+		fitColumns="true"
+		singleSelect="true">
         <thead>
             <tr>
                 <th field="firstname" width="50">Login</th>
@@ -43,7 +48,7 @@ $mod_width_heigth="width:700px;height:350px";
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit()">Editar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="remover()">Remover</a>
     </div>
-    
+
     <div id="dlg" class="easyui-dialog" style="width:500px"
             closed="true" buttons="#dlg-buttons">
         <form id="fm" method="post" novalidate style="margin:0;padding:20px 50px">
@@ -70,7 +75,6 @@ $mod_width_heigth="width:700px;height:350px";
             <select id="funcao" class="easyui-combobox" name="funcao" style="width: 200px">
                 <option value="1">Professor</option>
                 <option value="0">SICP</option>
-            </select>
             </select>
         </form>
     </div>

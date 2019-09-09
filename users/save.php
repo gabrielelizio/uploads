@@ -1,4 +1,5 @@
 <?php
+include '../conn.php';
 
 include_once("../lib/verifica-login.php");
 
@@ -10,7 +11,6 @@ $cpf = htmlspecialchars($_REQUEST['cpf']);
 $pass = md5(htmlspecialchars($_REQUEST['pass']));
 $funcao = htmlspecialchars($_REQUEST['funcao']);
 
-include '../conn.php';
 
 $sql = "insert into users(firstname, lastname, phone, email, pass, tipoCad , cpf) values('$firstname','$lastname','$phone','$email', '$pass', '$funcao' , '$cpf')";
 $result = @mysql_query($sql);
