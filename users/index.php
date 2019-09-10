@@ -1,7 +1,7 @@
 <?php
 
-include_once("../lib/verifica-login.php");
-include_once("../variables_global.php");
+include_once ("../lib/verifica-login.php");
+include_once ("../variables_global.php");
 
 
 ?>
@@ -22,23 +22,23 @@ include_once("../variables_global.php");
 
   </head>
   <body>
- 
 
-<?php  include_once("../notification_bars.php"); ?>
+
+<?php  include_once ("../notification_bars.php"); ?>
 
 
 <?php
   if($_SESSION["nivel"] == 1){
-      require_once("../menu-professor.php");
+      require_once ("../menu-professor.php");
   }else{
-      require_once("../menu-sicp.php");
+      require_once ("../menu-sicp.php");
   }
 ?>
 
 <div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-user pl-5 text-center"> Usuários </h1>
 </div>
-  
+
 <div class="conatainer pt-5">
   <div class="row">
     <div class="col-3"></div>
@@ -49,7 +49,7 @@ include_once("../variables_global.php");
   </div>
 </div>
 
-  <?php include_once("../notification_message.php"); ?>
+  <?php include_once ("../notification_message.php"); ?>
 
 
     <!-- We recommended use jQuery 1.10 or up -->

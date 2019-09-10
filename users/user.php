@@ -1,6 +1,6 @@
 <?php
 
-include_once("../lib/verifica-login.php");
+include_once	("../lib/verifica-login.php");
 $mod_Title="Usuários";
 
 $mod_title_datagerid="Usuários";
@@ -27,7 +27,7 @@ $mod_width_heigth="width:700px;height:350px";
 
     <table id="dg" title="<?php echo $mod_title_datagerid; ?>"
 		class="easyui-datagrid" style="<?php echo $mod_width_heigth;?>"
-    url="get1.php"
+    url="get.php"
     toolbar="#toolbar"
 		pagination="true"
     rownumbers="true"
@@ -79,7 +79,7 @@ $mod_width_heigth="width:700px;height:350px";
         </form>
     </div>
     <div id="dlg-buttons">
-        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="salvar()" style="width:90px">Salvar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="Salvar()" style="width:90px">Salvar</a>
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancelar</a>
     </div>
     <script type="text/javascript">
@@ -87,7 +87,7 @@ $mod_width_heigth="width:700px;height:350px";
         function novo(){
             $('#dlg').dialog('open').dialog('center').dialog('setTitle','Novo');
             $('#fm').form('clear');
-            url = 'save.php';
+            url ='save.php';
         }
         function edit(){
             var row = $('#dg').datagrid('getSelected');
@@ -97,19 +97,19 @@ $mod_width_heigth="width:700px;height:350px";
                 url = 'update.php?id='+row.id;
             }
         }
-        function salvar(){
+        function Salvar(){
             $('#fm').form('submit',{
                 url: url,
                 onSubmit: function(){
                     return $(this).form('validate');
                 },
                 success: function(result){
-                    var result = eval('('+result+')');
+                    var result = eval('('+result+')')
                     if (result.errorMsg){
                         $.messager.show({
                             title: 'Error',
                             msg: result.errorMsg
-                        });
+                        })
                     } else {
                         $('#dlg').dialog('close');        // close the dialog
                         $('#dg').datagrid('reload');    // reload the user data

@@ -1,7 +1,7 @@
 <?php
 include '../conn.php';
 
-include_once("../lib/verifica-login.php");
+//include_once ("../lib/verifica-login.php");
 
 $firstname = htmlspecialchars($_REQUEST['firstname']);
 $lastname = htmlspecialchars($_REQUEST['lastname']);
@@ -12,8 +12,10 @@ $pass = md5(htmlspecialchars($_REQUEST['pass']));
 $funcao = htmlspecialchars($_REQUEST['funcao']);
 
 
-$sql = "insert into users(firstname, lastname, phone, email, pass, tipoCad , cpf) values('$firstname','$lastname','$phone','$email', '$pass', '$funcao' , '$cpf')";
+$sql = "insert into users(firstname, lastname, phone, email, pass, tipoCad , cpf,cod_regera) values('$firstname','$lastname','$phone','$email', '$pass', '$funcao' , '$cpf','null')";
+
 $result = @mysql_query($sql);
+
 if ($result){
 	echo json_encode(array(
 		'id' => mysql_insert_id(),

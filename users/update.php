@@ -1,6 +1,6 @@
 <?php
 
-include_once("../lib/verifica-login.php");
+include_once ("../lib/verifica-login.php");
 
 $id = intval($_REQUEST['id']);
 $firstname = htmlspecialchars($_REQUEST['firstname']);

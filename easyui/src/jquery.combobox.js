@@ -1,7 +1,7 @@
 /**
- * EasyUI for jQuery 1.5.3
+ * EasyUI for jQuery 1.8.5
  * 
- * Copyright (c) 2009-2017 www.jeasyui.com. All rights reserved.
+ * Copyright (c) 2009-2019 www.jeasyui.com. All rights reserved.
  *
  * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
  * To use it on other terms please contact us: info@jeasyui.com
@@ -155,6 +155,8 @@
 					el.addClass('combobox-item-selected');
 					opts.onSelect.call(target, row);
 				}
+			} else {
+				s = findText(v, opts.mappingRows) || v;
 			}
 			vv.push(v);
 			ss.push(s);
@@ -173,6 +175,11 @@
 		}
 		$(target).combo('setValues', vv);
 		panel.triggerHandler('scroll');	// trigger the group sticking
+
+		function findText(value, a){
+			var item = $.easyui.getArrayItem(a, opts.valueField, value);
+			return item ? item[opts.textField] : undefined;
+		}
 	}
 	
 	/**
@@ -325,11 +332,11 @@
 			}
 		}));
 
-		var p = $(target).combo('panel');
-		p.unbind('.combobox');
-		for(var event in opts.panelEvents){
-			p.bind(event+'.combobox', {target:target}, opts.panelEvents[event]);
-		}
+		// var p = $(target).combo('panel');
+		// p.unbind('.combobox');
+		// for(var event in opts.panelEvents){
+		// 	p.bind(event+'.combobox', {target:target}, opts.panelEvents[event]);
+		// }
 	}
 
 	function mouseoverHandler(e){
@@ -451,12 +458,23 @@
 		},
 		setValues: function(jq, values){
 			return jq.each(function(){
+				var opts = $(this).combobox('options');
+				if ($.isArray(values)){
+					values = $.map(values, function(value){
+						if (value && typeof value == 'object'){
+							$.easyui.addArrayItem(opts.mappingRows, opts.valueField, value);
+							return value[opts.valueField];
+						} else {
+							return value;
+						}
+					});
+				}
 				setValues(this, values);
 			});
 		},
 		setValue: function(jq, value){
 			return jq.each(function(){
-				setValues(this, $.isArray(value)?value:[value]);
+				$(this).combobox('setValues', $.isArray(value)?value:[value]);
 			});
 		},
 		clear: function(jq){
@@ -553,10 +571,11 @@
 		render: function(target, container, data){
 			var state = $.data(target, 'combobox');
 			var opts = state.options;
-
+			var prefixId = $(target).attr('id')||'';
+			
 			COMBOBOX_SERNO++;
-			state.itemIdPrefix = '_easyui_combobox_i' + COMBOBOX_SERNO;
-			state.groupIdPrefix = '_easyui_combobox_g' + COMBOBOX_SERNO;		
+			state.itemIdPrefix = prefixId + '_easyui_combobox_i' + COMBOBOX_SERNO;
+			state.groupIdPrefix = prefixId + '_easyui_combobox_g' + COMBOBOX_SERNO;		
 			state.groups = [];
 			
 			var dd = [];
@@ -610,6 +629,8 @@
 		queryParams: {},
 		showItemIcon: false,
 		limitToList: false,	// limit the inputed values to the listed items
+		unselectedValues: [],
+		mappingRows: [],
 		view: defaultView,
 		
 		keyHandler: {
@@ -622,6 +643,7 @@
 		},
 		inputEvents: $.extend({}, $.fn.combo.defaults.inputEvents, {
 			blur: function(e){
+				$.fn.combo.defaults.inputEvents.blur(e);
 				var target = e.data.target;
 				var opts = $(target).combobox('options');
 				if (opts.reversed || opts.limitToList){
@@ -653,6 +675,10 @@
 		panelEvents: {
 			mouseover: mouseoverHandler,
 			mouseout: mouseoutHandler,
+			mousedown: function(e){
+				e.preventDefault();
+				e.stopPropagation();
+			},
 			click: clickHandler,
 			scroll: scrollHandler
 		},
