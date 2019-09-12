@@ -4,6 +4,7 @@ body{
     height: 720px;
     background: url(../images/bg_login.jpg);
     background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 

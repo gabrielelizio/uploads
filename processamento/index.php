@@ -77,9 +77,6 @@ if($_SESSION["nivel"] == 1){
    $sql = "SELECT * FROM uploads where status='Pendente' order by data_envio desc";
   }
 
-
-
-
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 while($linha=mysql_fetch_array($resultado))
 {
@@ -101,6 +98,10 @@ if($diferenca_hora <= 12){ $cor="class='ls-tag-success'";}
 if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"; }  
 if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }  
 
+date_default_timezone_set('UTC');
+$data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
+$data2 = date('d/m/Y - H:i:s',strtotime($linha['data_processamento']));
+
 
 if($_SESSION["nivel"] == 1){
    
@@ -111,7 +112,7 @@ echo "
           <a href='#'>$nome</a>
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor> $data_envio</a></td>
+        <td class='ls-txt-center'><a href='#' $cor> $data1</a></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
@@ -131,12 +132,12 @@ echo "
           <a href='#'>$nome</a>
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor>  $data_envio </a></td></td>
+        <td class='ls-txt-center'><a href='#' $cor>  $data1 </a></td></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
+        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
         </td>
       </tr>
   </tbody>";

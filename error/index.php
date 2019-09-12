@@ -99,10 +99,15 @@ $status  = $linha["status"];
 $observacao  = $linha["observacao"];
 $data_processamento = $linha["data_processamento"];
 
+
 $diferenca_hora = diferenca_data($data_envio);
 if($diferenca_hora <= 12){ $cor="class='ls-tag-success'";}
 if($diferenca_hora > 12 and $diferenca_hora <=24){ $cor="class='ls-tag-warning'"; }
 if($diferenca_hora > 24){ $cor="class='ls-tag-danger'";  }
+
+date_default_timezone_set('UTC');
+$data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
+$data2 = date('d/m/Y - H:i:s',strtotime($linha['data_processamento']));
 
 if($_SESSION["nivel"] == 1){
 
@@ -114,12 +119,12 @@ echo "
 
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td>
+        <td class='ls-txt-center'><a href='#' $cor> $data1 </a></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status&observacao=$observacao&data_processamento=$data_processamento' class='ls-btn ls-btn-sm'>Ver Erro</a>
+        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2' class='ls-btn ls-btn-sm'>Ver Erro</a>
         </td>
       </tr>
         </td>
@@ -137,12 +142,12 @@ echo "
 
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'><a href='#' $cor> $data_envio </a></td></td>
+        <td class='ls-txt-center'><a href='#' $cor> $data1</a></td></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status&observacao=$observacao&data_processamento=$data_processamento' class='ls-btn ls-btn-sm'>Ver Erro</a>
+        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2' class='ls-btn ls-btn-sm'>Ver Erro</a>
         </td>
       </tr>
   </tbody>";

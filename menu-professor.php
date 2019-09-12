@@ -29,23 +29,21 @@
         </li>
         
 
-                    
-					<li class="nav-item active dropdown">
+			<li class="nav-item active dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt; padding-botto:20px;">  Sair   </a>
 
-          <div style="background-color: black;" class="dropdown-menu text-center">
-          <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
-          </div>
-          </li>
+        <div style="background-color: black;" class="dropdown-menu text-center">
+        <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
+        </div>
+        </li>
 
-          <li class="nav-item active"></li>
-          
-          </ul>
+
+        </ul>
 			</div>
     </nav>  
-      
-      
+
+
     
 <!-- <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php" class="ls-ico-upload" title="">Uploads</a></li>
   <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php" class="ls-ico-spinner" title="Agentes">Processando</a></li>

@@ -32,42 +32,6 @@
 		}
 	?>
 
-	<!--	<nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
-        <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#menu" >
-            <span class="navbar-toggler-icon"></span>
-		</button>
-
-            <div id="menu" class="collapse navbar-collapse container">
-                <ul class="navbar-nav ml-md-auto">
-
-					<li class="nav-item">
-                        <a class="nav-link"  href="#"> <h6> Processando </h6> </a>
-					</li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> <h6> Realizados </h6> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"  href="#"> <h6> Erros </h6> </a>
-					</li>
-
-					<li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
-
-                        <div style="background-color: black;" class="dropdown-menu text-center">
-                            <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
-                        </div>
-					</li>
-					<li class="nav-item">
-                        <a class="nav-link"  href="#"> <h6></h6> </a>
-					</li>
-
-                </ul>
-			</div>
-	</nav>
-
-	-->
 	<div class="pt-2"></div>
 	<div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center "> Upload de Provas </h1>

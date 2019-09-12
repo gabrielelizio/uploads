@@ -45,7 +45,7 @@ include_once("../lib/conexao_banco.php");
 	<div class="container pt-5">
 
   <div class="row pt-5">
-    <div class="col-8">
+    <div class="col-7">
     <form  action="busca-registro_processada.php" class="form-row">
       <label style="width: 70%;" class="ls-label" role="search">
         <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..."
@@ -57,12 +57,39 @@ include_once("../lib/conexao_banco.php");
 </form>
     </div>
     <div class="col-2"></div>
+    <div class="col-3">
+        <a class="btn btn-secondary float-right text-light" data-toggle="modal" data-target="#exampleModalCenter"> 
+          <i class="ls-ico-remove ls-text-xl"></i> Limpar Registros</a>
+    </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="exampleModalCenterTitle"> Deseja mesmo excluir estes Registros ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div style="height: 190px;" class="modal-body">
+      <br>
+        Aviso, está ação não pode ser revertida. Ao clicar em aceitar todos os registro listados abaixo na tabela como
+        processados serão apagados permanentemente da sua base de dados.
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-dark text-center pr-5 pl-5"> <i class="ls-ico-remove ls-text-xl"></i> Estou ciente</button>
+      </div>
+    </div>
+  </div>
 
 
+</div>
+<hr>
 <div class="row pt-2">
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover table-responsive-lg">
   <thead class="bg-success">
     <tr>
       <th class="text-center text-light">Professor</th>
@@ -71,7 +98,7 @@ include_once("../lib/conexao_banco.php");
       <th class="text-center text-light">Submissão</th>
       <th class="text-center text-light">Data Impressão</th>
       <th class="text-center text-light">Arquivo</th>
-      <th></th>
+      <th class="text-center text-light"> Status </th>
     </tr>
   </thead>
   <style>
@@ -108,6 +135,12 @@ $rastreio  = $linha["rastreio"];
 $data_envio  = $linha["data_envio"];
 $data_processamento  = $linha["data_processamento"];
 
+
+// converte as datas para o formato brasileiro.
+date_default_timezone_set('UTC');
+$data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
+$data2 = date('d/m/Y - H:i:s',strtotime($linha['data_processamento']));
+
 echo "
 <tbody>
       <tr>
@@ -117,8 +150,8 @@ echo "
         </td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$data_envio</td>
-        <td class='ls-txt-center'>$data_processamento</td>
+        <td class='ls-txt-center'>$data1</td>
+        <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
       </tr>
