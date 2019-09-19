@@ -80,7 +80,9 @@ include_once("../lib/conexao_banco.php");
       </div>
       <div class="modal-footer">
         
-        <button type="button" class="btn btn-dark text-center pr-5 pl-5"> <i class="ls-ico-remove ls-text-xl"></i> Estou ciente</button>
+      <a href="#aqui vai a url da pagina de delete" class="btn btn-dark text-center pr-5 pl-5"> 
+        <i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a>
+
       </div>
     </div>
   </div>

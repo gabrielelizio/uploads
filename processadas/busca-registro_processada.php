@@ -81,7 +81,7 @@ error_reporting(0);
 $rastreio = htmlspecialchars($_REQUEST['rastreio']);
 
 $sql = "SELECT * FROM processada WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
-or data_envio like '%$rastreio%'";
+or data_envio like '%$rastreio%' AND status = 'Impresso' ";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 if(mysql_num_rows($resultado) > 0){
 	while($linha=mysql_fetch_array($resultado))

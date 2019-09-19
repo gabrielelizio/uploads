@@ -127,15 +127,11 @@ $status  = htmlspecialchars($_REQUEST['status']);
         <textarea class=" form-control border border-success" name="observacao" cols="30" rows="5"></textarea>
       </label>
 
-    <div class="domain-actions ls-display-none">
-      <button type="submit" class="ls-btn-primary">Salvar</button>
-      <button class="ls-btn" data-ls-fields-enable="#domain-form" data-toggle-class="ls-display-none" data-target=".domain-actions" >Cancelar</button>
-    </div>
+   
+    <div class=" btn text-center ls-actions-btn">
+    <button class="btn ls-btn-primary text-light pr-5 pl-5" name="rastreio" value='<?php echo $rastreio;?>'>Validar</button>
+    <input type='button' class="btn btn-secondary pr-5 pl-5" name="cancelar" value='Voltar' onclick='history.go(-1)'>
     
-    <label class="ls-label col-md-6 col-lg-8">
-    <div class=" text-center ls-actions-btn">
-    <button class="ls-btn ls-btn-primary pr-5 pl-5" name="rastreio" value='<?php echo $rastreio;?>'>Validar</button>
-    <button class="ls-btn-danger pr-5 pl-5" name="cancelar">Cancelar</button>
   </div>
     </label>
   </form>
