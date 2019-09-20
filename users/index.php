@@ -20,8 +20,8 @@ include_once ("../variables_global.php");
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <style>
-      .toggle { display: none; } 
-      .same-box-1 { display: none; }
+      .hiden { display: none; } 
+      
     </style>
   </head>
   <body>
@@ -47,39 +47,30 @@ include_once ("../variables_global.php");
     <div class="col-3"></div>
 
 
-    <div class="ls-tabs-btn col-6">
-
-    <div class="ls-tabs-btn">
+    <div class="ls-tabs-btn col-6">    
     <ul class="ls-tabs-btn-nav">
-    <li class="col-md-3 col-xs-6 ls-active">
-      <a href="#box1" class="ls-btn" data-ls-module="button" >
-        <span class="ls-ico-user-add"> ADD Usuário</span></a></li>
+    <li class="col-md-3 col-xs-6">
+      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba1"class="ls-btn" data-ls-module="button" >
+        <span class="ls-ico-user-add"> ADD Usuário</a></li>
 
     <li class="col-md-2 col-xs-6">
-      <a href="#box2" class="ls-btn" data-ls-module="button">
+      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba2"  class="ls-btn" data-ls-module="button">
       <span class="ls-ico-list"> Listar </span></a></li>
 
     <li class="col-md-2 col-xs-6">
-      <a href="#box3" class="ls-btn" data-ls-module="button">
-      <span class="ls-ico-remove"></span></a></li>
-    
-  </ul>
+      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba3" class="ls-btn" data-ls-module="button">
+      <span class="ls-ico-remove"></span></a></li>  
+  </ul> 
 
-    <!--  <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" data-ls-module="button" data-target="#tab1a"
-        class=" btn btn-outline-success ls-ico-user-add"> Add Usuário</button>
+    </div>
 
-        <button type="button" data-ls-module="button" data-target="#tab2a" 
-        class="btn btn-outline-success pr-4 pl-4"> <i class="ls-ico-list text-dark"> </i> Listar </button>
-
-        <button type="button" data-ls-module="button" data-target="#tab3a" 
-        class="btn btn-outline-success  pr-4 pl-4 "> <i class="ls-ico-remove text-danger"> </i> </button>
-      </div> -->
-
-      <!-- div p/ opção de adiiconar usuário -->
-        <div class="ls-tabs-container pt-5 border border-secondary">
-            <div class="same-box-1 toggle" id="box1">
-              <form >
+    <!-- formulario de cadastro d eusuarios -->
+  </div>
+        <div class=" row pt-5 ">
+          <div class="col-3"></div>
+            <div class=" hiden col-6 pt-5 border border-secondary" id="box1">
+            <table>
+            <form >
                 <div class="row">
                   <div class="col-2"></div>
                   <div class="form-group col-6">
@@ -100,7 +91,7 @@ include_once ("../variables_global.php");
 
                 <div class="row">
                   <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="form-group col-4">
                     <label class="text-success"> CPF: </label>
                     <input type="text" class="form-control border-primary" id="cpf" 
                     placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" required="required" pattern="[0-9]+$">
@@ -149,46 +140,127 @@ include_once ("../variables_global.php");
                   </div>
                 </div>
 
-                <div class="row pt-4">
+                <div class="row pt-3">
                   <div class="col-2"></div>
                   <div class="col-5 pt-5">
-                  <button type="submit" class="btn btn-primary pr-5 pl-5"> Salvar </button>
+                  <input type="submit" value="Salvar" class="ls-btn ls-btn-primary pr-5 pl-5"> 
                   </div>
                   <div class="col-4 pt-5">
-                  <button type="reset" class="btn btn-secondary pr-5 pl-5"> Cancelar </button>
+                  <input type="reset" value="Cancelar" class="ls-btn ls-btn-secondary pr-5 pl-5"> 
                   </div>
+                  <div class="pt-5 pb-5"></div>
               </form>
+            </table>
               </div>
-        
-              <div style="height:200px;" class="row"></div> 
-            
+          <div class="col-2"></div>
+        </div> <!-- fim div clas row -->     
 
 
-            <!-- lista de users -->
-            <div class="same-box-1 toggle" id="box2" >
-                Lucas vinicios Martins jkfbsdanahbfsdjuckubsadgjhu
-            </div>
+
+  <!-- lista de users -->
+  <div class="row">
+    <div class="col-1"></div>
+  <div class="hiden col-10" id="box2" >
+                
+   <Ul> <li> <h2 class="text-success pb-5"> Usuários Cadastrados</h2> </li> </Ul>
+   <div style="overflow: auto; height: 640px">
+   <table class="table table-borderless table-hover ">
+  <thead class="bg-secondary">
+    <tr>
+      <th class="text-center text-light">Nome</th>
+      <th class="text-center text-light">CPF</th>
+      <th class="text-center text-light">email</th>
+      <th class="text-center text-light">Telefone</th>
+      <th class="text-center text-light">Função</th>
+    </tr>
+  </thead>
+<?php
+
+$sql = "SELECT * FROM users";
+$resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
+while($linha=mysql_fetch_array($resultado))
+{
+$idProfessor = $linha["id"];
+$firstname = $linha["firstname"];
+$lastname = $linha["lastname"];
+$cpf = $linha["cpf"];
+$telefone = $linha["phone"];
+$email = $linha["email"];
+$funcao = $linha["tipoCad"];
+
+
+echo "
+<tbody>
+      <tr>
+        <td>
+          <a href='#'>$firstname $lastname</a>
+
+        </td>
+        <td class='ls-txt-center'>$cpf</td>
+        <td class='ls-txt-center'>$email</td>
+        <td class='ls-txt-center'>$telefone</td>
+        <td class='ls-txt-center'>$funcao</td>
+      </tr>
+  </tbody>";
+
+}
+
+?>
+</table>
+<hr>
+<ul>
+  <li> Função = 1 : <span class="text-success"> Professor </span></li>
+  <li> Função = 2 : <span class="text-success"> SCIP </span></li>
+</ul>
+</div>
+</div> 
+<div class="col-1"></div>
+</div> <!-- fim da row -->
+
 
             <!-- Excluir users -->
-            <div  class="same-box-1 toggle text-dark" id="box3" >
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                \xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                v\xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-                v\xkzxcjnvkzjnxcvkjnzxckjnvkjzxncvkjnzxckjvnkjzxcnvkjzxnvhckjzxnhcv
-            </div>
+<div class="row">
+  <div class="col-3"></div>
+  <div  class="hiden col-6" id="box3" >
+  <div style="overflow: auto; height: 500px">
+      <table  class="table table-borderless table-hover ">
+      <thead class="bg-secondary">
+        <tr>
+          <th style="width: 400px;" class=" text-light pl-5">Nome</th>
+          <th class="text-center text-light float-right"> </th> 
+        </tr>
+      </thead>
+      <?php $sql = "SELECT id, firstname, lastname  FROM users";
+      $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
+      while($linha=mysql_fetch_array($resultado))
+      {
+      $id = $linha["id"];
+      $nome= $linha["firstname"];
+      $sobrenome = $linha["lastname"];
+
+      ?>
+
+      <tbody>
+        <tr>
+          <td class="text-primary"> <?php echo "$nome $sobrenome" ?> </td>
+          <td> <a href="#" class="ls-ico-cancel-circle text-danger float-right">  </a> </td>
+        </tr>
+      </tbody>
+
+      <?php
+      }
+      ?>
+      </table>   
+  </div>
+</div>
+<div class="col-3"></div>
+</div>         
+     
         
-      
-        </div>
-
-      </div>
-
-    </div> <!-- fim div clas row -->
+    
     </div>  <!-- fim div container-->
+
+    <div style="height:200px;" class="row"></div> 
 
 
   <?php include_once ("../notification_message.php"); ?>
@@ -198,24 +270,37 @@ include_once ("../variables_global.php");
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
     <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  
+    <script type="text/javascript"> 
+    function escondeMostra(x){ 
+      x = document.getElementById(x).style.display == "none";){
+        document.getElementById(x).style.display = "inline"; } 
+        else{ document.getElementById(x).style.display = "none"; }
+      } 
+    </script>
 
   </body>
 
+  <script>
+function mostrar_abas(obj) {
 
-<script>
-  $(document).ready(function () {
-      $("a").click(function () {
-        if ($(this).hasClass("same-box")) {
-          $(".toggle:visible").slideUp();
-          $($(this).attr("href")).slideDown();
-          return false;
-        }
-        var myelement = $(this).attr("href");
-        $(myelement).slideToggle("fast");
-        $(".toggle:visible").not(myelement).slideUp();
-      });
-    });
+     document.getElementById('box1').style.display="none";
+      document.getElementById('box2').style.display="none";
+      document.getElementById('box3').style.display="none";
+
+   switch (obj.id) {
+      case 'mostra_aba1':
+      document.getElementById('box1').style.display="block";
+      break
+      case 'mostra_aba2':
+      document.getElementById('box2').style.display="block";
+      break
+      case 'mostra_aba3':
+      document.getElementById('box3').style.display="block";
+      break
+   }
+}
+
 </script>
 
 </html>
