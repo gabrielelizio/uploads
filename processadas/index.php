@@ -40,7 +40,7 @@ include_once("../lib/conexao_banco.php");
 	<div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center"> Arquivos Realizados </h1>
   </div>
-  
+
 
 	<div class="container pt-5">
 
@@ -58,7 +58,7 @@ include_once("../lib/conexao_banco.php");
     </div>
     <div class="col-2"></div>
     <div class="col-3">
-        <a class="btn btn-secondary float-right text-light" data-toggle="modal" data-target="#exampleModalCenter"> 
+        <a class="btn btn-secondary float-right text-light" data-toggle="modal" data-target="#exampleModalCenter">
           <i class="ls-ico-remove ls-text-xl"></i> Limpar Registros</a>
     </div>
 </div>
@@ -79,9 +79,14 @@ include_once("../lib/conexao_banco.php");
         processados serão apagados permanentemente da sua base de dados.
       </div>
       <div class="modal-footer">
-        
-      <a href="#aqui vai a url da pagina de delete" class="btn btn-dark text-center pr-5 pl-5"> 
-        <i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a>
+				<?php
+					$delete = $sql="DELETE * from uploads";
+				?>
+
+      <a href="index.php?$delete" class="btn btn-dark text-center pr-5 pl-5">
+				<i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a>
+
+
 
       </div>
     </div>

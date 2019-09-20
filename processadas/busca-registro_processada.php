@@ -4,7 +4,7 @@ include_once("../lib/verifica-login.php");
 include_once("../variables_global.php");
 include_once("../lib/funcoes.php");
 include_once("../lib/conexao_banco.php");
- 
+
 error_reporting(0);
 ?>
 
@@ -27,7 +27,7 @@ error_reporting(0);
 
  </head>
   <body>
-    
+
 
 
 <?php
@@ -41,13 +41,13 @@ error_reporting(0);
 <div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center ls-ico-checkmark-circle "> Processamento dos Arquivos / Impressão</h1>
 </div>
-      
+
 <div class="container pt-5">
   <div class="row pt-5">
     <div class="col-7">
     <form  action="busca-registro_processada.php" class="form-row">
     <label style="width: 70%;" class="ls-label" role="search">
-      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de rastreio" 
+      <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de rastreio"
       placeholder="N° do Código de rastreio" autocomplete="off" required="" class="form-control">
     </label>
     <div class="btn">
@@ -56,11 +56,11 @@ error_reporting(0);
 </form>
     </div>
     <div class="col-4">
-    <a style="margin-top: -5px" class="voltar btn btn-danger ls-float-left-xs" href="index.php"> Voltar a lista de registros</a> 
+    <a style="margin-top: -5px" class="voltar btn btn-danger ls-float-left-xs" href="index.php"> Voltar a lista de registros</a>
     </div>
   </div>
-        
-  <div class="row pt-5"> 
+
+  <div class="row pt-5">
 
   <table class="table table-striped table-hover">
   <thead class="bg-success">
@@ -99,45 +99,41 @@ if(mysql_num_rows($resultado) > 0){
 	$status  = $linha["status"];
 
 	if($_SESSION["nivel"] == 1){
-   
+
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
+
         </td>
-        <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'>$telefone</td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
+        <td class='ls-txt-center'>$data1</td>
+        <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='#'></a>
-        </td>
+        <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
       </tr>
-  </tbody>";
+	</tbody>";
 
   }else{
-   
-  
+
+
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
+
         </td>
-        <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'>$telefone</td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
+        <td class='ls-txt-center'>$data1</td>
+        <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
-        </td>
+        <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
       </tr>
-  </tbody>";
+	</tbody>";
 }
 	}
 }
@@ -145,7 +141,7 @@ echo "
 ?>
 </table>
 
-</div>  
+</div>
 </div>
 
   <?php include_once("../notification_message.php"); ?>
