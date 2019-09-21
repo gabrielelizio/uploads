@@ -63,9 +63,53 @@ include_once ("../variables_global.php");
   </ul> 
 
     </div>
-
     <!-- formulario de cadastro d eusuarios -->
   </div>
+
+    
+
+        <!-- Mensagem 1 -->
+        <?php if(isset($_GET['sucesso'])){ ?>
+
+<div class="row">
+<div class="col-3"></div>
+<div class="col-6">
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+Usuário cadastrado com sucesso!
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+</div>
+<div class="col-3"></div>
+</div>
+
+<?php  }  ?>
+<!-- ------------------------------------------------------------ -->
+
+<!-- Mensagem 2 -->
+<?php if(isset($_GET['sucesso2'])){ ?>
+
+<div class="row">
+<div class="col-3"></div>
+<div class="col-4 ">
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+Usuário excluído com sucesso !!
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+</div>
+<div class="col-3"></div>
+</div>
+
+<?php  }  ?>
+
+ <!-- formulario de cadastro d eusuarios -->
         <div class=" row pt-5 ">
           <div class="col-3"></div>
             <div class=" hiden col-6 pt-5 border border-secondary" id="box1">
@@ -176,7 +220,7 @@ include_once ("../variables_global.php");
   </thead>
 <?php
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users ";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 while($linha=mysql_fetch_array($resultado))
 {
@@ -237,16 +281,26 @@ echo "
       $id = $linha["id"];
       $nome= $linha["firstname"];
       $sobrenome = $linha["lastname"];
-
       ?>
 
       <tbody>
         <tr>
+          
           <td class="text-primary"> <?php echo "$nome $sobrenome" ?> </td>
-          <td> <a href="#" class="ls-ico-cancel-circle text-danger float-right">  </a> </td>
+          <td>
+
+          <a href="" data-ls-module="modal"  aria-label="Excluir" 
+            data-action="delete-user.php?excluir=<?php echo $id ?> " 
+            
+            data-content="<h6> Deseja mesmo excluir este registro de usuário ? </h6> <br><p> Aviso , 
+            está ação não pode ser revertida , ao clicar em aceitar os respectivos dados serão apagados permanentemente 
+            da sua base de dados. </p>" data-title="Excluir" data-class="btn btn-success pr-5 pl-5 btn " data-save="Sim"
+            data-close="Fechar"> <i class="btn  ls-ico-cancel-circle text-danger float-right"></i></a></td>
+
+            
         </tr>
       </tbody>
-
+     
       <?php
       }
       ?>
@@ -255,8 +309,6 @@ echo "
 </div>
 <div class="col-3"></div>
 </div>         
-     
-        
     
     </div>  <!-- fim div container-->
 
