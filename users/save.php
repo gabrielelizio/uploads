@@ -1,32 +1,31 @@
 <?php
-include '../conn.php';
 
-//include_once ("../lib/verifica-login.php");
-
-$firstname = htmlspecialchars($_REQUEST['firstname']);
-$lastname = htmlspecialchars($_REQUEST['lastname']);
-$phone = htmlspecialchars($_REQUEST['phone']);
-$email = htmlspecialchars($_REQUEST['email']);
-$cpf = htmlspecialchars($_REQUEST['cpf']);
-$pass = md5(htmlspecialchars($_REQUEST['pass']));
-$funcao = htmlspecialchars($_REQUEST['funcao']);
+include_once ("../lib/verifica-login.php");
+include_once ("../variables_global.php");
 
 
-$sql = "insert into users(firstname, lastname, phone, email, pass, tipoCad , cpf,cod_regera) values('$firstname','$lastname','$phone','$email', '$pass', '$funcao' , '$cpf','null')";
 
-$result = @mysql_query($sql);
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$cpf= $_POST['cpf'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$password = md5($_POST['password']);
+$funcao = $_POST['funcao'];
 
-if ($result){
-	echo json_encode(array(
-		'id' => mysql_insert_id(),
-		'firstname' => $firstname,
-		'lastname' => $lastname,
-		'phone' => $phone,
-		'email' => $email,
-		'pass' => $pass,
-		'funcao' => $funcao
-	));
-} else {
-	echo json_encode(array('errorMsg'=>'Some errors occured.'));
+
+if($funcao == "Professor"){
+	$tipoCad= 1;
 }
+else{
+	$tipoCad = 2;
+}
+
+$sql = "INSERT INTO users (firstname, lastname, phone, email, pass, tipoCad, cpf) 
+	VALUES('$firstname', '$lastname', '$phone', '$email', '$password', '$tipoCad', '$cpf')";
+$resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
+
+header('Location: index.php?sucesso'); 
+exit();
+
 ?>

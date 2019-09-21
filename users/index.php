@@ -114,13 +114,13 @@ Usuário excluído com sucesso !!
           <div class="col-3"></div>
             <div class=" hiden col-6 pt-5 border border-secondary" id="box1">
             <table>
-            <form >
+            <form action="save.php" method="post"> 
                 <div class="row">
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Primeiro nome: </label>
                     <input type="text" class="form-control border-primary" id="firstName"
-                    placeholder="" autocomplete="off" required>
+                    placeholder="" autocomplete="off" required name="firstname">
                   </div>
                 </div>
 
@@ -129,7 +129,7 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-6">
                     <label class="text-success"> Sobrenome: </label>
                     <input type="text" class="form-control border-primary" id="lastName"
-                    placeholder="" autocomplete="off" required>
+                    placeholder="" autocomplete="off" required name="lastname">
                   </div>
                 </div>
 
@@ -138,7 +138,8 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-4">
                     <label class="text-success"> CPF: </label>
                     <input type="text" class="form-control border-primary" id="cpf"
-                    placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" required="required" pattern="[0-9]+$">
+                    placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" name="cpf"
+                    required="required" pattern="[0-9]+$">
                   </div>
                 </div>
 
@@ -146,7 +147,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Telefone: </label>
-                    <input type="text" class="form-control border-primary" id="phone"
+                    <input type="text" class="form-control border-primary" id="phone" name="phone"
                     placeholder="Apenas numeros com DDD.: ex: 3133333333" autocomplete="off" required>
                   </div>
                 </div>
@@ -155,7 +156,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Email: </label>
-                    <input type="text" class="form-control border-primary" id="email"
+                    <input type="text" class="form-control border-primary" id="email" name="email"
                     placeholder="" autocomplete="off" required>
                   </div>
                 </div>
@@ -165,7 +166,7 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-6">
                     <label class="text-success"> Senha: </label>
                     <div class="ls-prefix-group ls-field-lg">
-                      <input id="password_field" class="ls-login-bg-password form-control border-primary"
+                      <input id="password_field" name="password" class="ls-login-bg-password form-control border-primary"
                       name="password" type="password" placeholder="Sua Senha" required>
                       <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye"
                       data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
@@ -176,7 +177,7 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-6">
                     <label class="text-success"> Função: </label>
                     <div>
-                    <select id="inputState" class="form-control border-primary ">
+                    <select id="inputState" name="funcao" class="form-control border-primary ">
                       <option selected>Professor</option>
                       <option>SICP</option>
                     </select>

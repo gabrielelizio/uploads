@@ -1,6 +1,5 @@
 <?php 
 
-
 include_once ("../lib/verifica-login.php");
 include_once ("../variables_global.php");
 
@@ -15,8 +14,7 @@ if(isset($_GET['excluir'])){
 
             $id = $linha['id'];   
         }
-
-        
+  
     }
 
      $sql= "DELETE FROM users WHERE id = '$id'";
