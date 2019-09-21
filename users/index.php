@@ -20,8 +20,8 @@ include_once ("../variables_global.php");
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <style>
-      .hiden { display: none; } 
-      
+      .hiden { display: none; }
+
     </style>
   </head>
   <body>
@@ -47,7 +47,7 @@ include_once ("../variables_global.php");
     <div class="col-3"></div>
 
 
-    <div class="ls-tabs-btn col-6">    
+    <div class="ls-tabs-btn col-6">
     <ul class="ls-tabs-btn-nav">
     <li class="col-md-3 col-xs-6">
       <a href="#" onclick="mostrar_abas(this);" id="mostra_aba1"class="ls-btn" data-ls-module="button" >
@@ -59,14 +59,14 @@ include_once ("../variables_global.php");
 
     <li class="col-md-2 col-xs-6">
       <a href="#" onclick="mostrar_abas(this);" id="mostra_aba3" class="ls-btn" data-ls-module="button">
-      <span class="ls-ico-remove"></span></a></li>  
-  </ul> 
+      <span class="ls-ico-remove"></span></a></li>
+  </ul>
 
     </div>
     <!-- formulario de cadastro d eusuarios -->
   </div>
 
-    
+
 
         <!-- Mensagem 1 -->
         <?php if(isset($_GET['sucesso'])){ ?>
@@ -119,7 +119,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Primeiro nome: </label>
-                    <input type="text" class="form-control border-primary" id="firstName" 
+                    <input type="text" class="form-control border-primary" id="firstName"
                     placeholder="" autocomplete="off" required>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Sobrenome: </label>
-                    <input type="text" class="form-control border-primary" id="lastName" 
+                    <input type="text" class="form-control border-primary" id="lastName"
                     placeholder="" autocomplete="off" required>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-4">
                     <label class="text-success"> CPF: </label>
-                    <input type="text" class="form-control border-primary" id="cpf" 
+                    <input type="text" class="form-control border-primary" id="cpf"
                     placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" required="required" pattern="[0-9]+$">
                   </div>
                 </div>
@@ -146,7 +146,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Telefone: </label>
-                    <input type="text" class="form-control border-primary" id="phone" 
+                    <input type="text" class="form-control border-primary" id="phone"
                     placeholder="Apenas numeros com DDD.: ex: 3133333333" autocomplete="off" required>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ Usuário excluído com sucesso !!
                   <div class="col-2"></div>
                   <div class="form-group col-6">
                     <label class="text-success"> Email: </label>
-                    <input type="text" class="form-control border-primary" id="email" 
+                    <input type="text" class="form-control border-primary" id="email"
                     placeholder="" autocomplete="off" required>
                   </div>
                 </div>
@@ -165,14 +165,14 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-6">
                     <label class="text-success"> Senha: </label>
                     <div class="ls-prefix-group ls-field-lg">
-                      <input id="password_field" class="ls-login-bg-password form-control border-primary" 
+                      <input id="password_field" class="ls-login-bg-password form-control border-primary"
                       name="password" type="password" placeholder="Sua Senha" required>
-                      <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye" 
+                      <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye"
                       data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
                     </div> <br>
 
                   <div class="row">
-                  
+
                   <div class="form-group col-6">
                     <label class="text-success"> Função: </label>
                     <div>
@@ -187,17 +187,17 @@ Usuário excluído com sucesso !!
                 <div class="row pt-3">
                   <div class="col-2"></div>
                   <div class="col-5 pt-5">
-                  <input type="submit" value="Salvar" class="ls-btn ls-btn-primary pr-5 pl-5"> 
+                  <input type="submit" value="Salvar" class="ls-btn ls-btn-primary pr-5 pl-5">
                   </div>
                   <div class="col-4 pt-5">
-                  <input type="reset" value="Cancelar" class="ls-btn ls-btn-secondary pr-5 pl-5"> 
+                  <input type="reset" value="Cancelar" class="ls-btn ls-btn-secondary pr-5 pl-5">
                   </div>
                   <div class="pt-5 pb-5"></div>
               </form>
             </table>
               </div>
           <div class="col-2"></div>
-        </div> <!-- fim div clas row -->     
+        </div> <!-- fim div clas row -->
 
 
 
@@ -205,7 +205,7 @@ Usuário excluído com sucesso !!
   <div class="row">
     <div class="col-1"></div>
   <div class="hiden col-10" id="box2" >
-                
+
    <Ul> <li> <h2 class="text-success pb-5"> Usuários Cadastrados</h2> </li> </Ul>
    <div style="overflow: auto; height: 640px">
    <table class="table table-borderless table-hover ">
@@ -257,7 +257,7 @@ echo "
   <li> Função = 2 : <span class="text-success"> SCIP </span></li>
 </ul>
 </div>
-</div> 
+</div>
 <div class="col-1"></div>
 </div> <!-- fim da row -->
 
@@ -271,7 +271,7 @@ echo "
       <thead class="bg-secondary">
         <tr>
           <th style="width: 400px;" class=" text-light pl-5">Nome</th>
-          <th class="text-center text-light float-right"> </th> 
+          <th class="text-center text-light float-right"> </th>
         </tr>
       </thead>
       <?php $sql = "SELECT id, firstname, lastname  FROM users";
@@ -285,34 +285,39 @@ echo "
 
       <tbody>
         <tr>
-          
+
           <td class="text-primary"> <?php echo "$nome $sobrenome" ?> </td>
           <td>
 
-          <a href="" data-ls-module="modal"  aria-label="Excluir" 
-            data-action="delete-user.php?excluir=<?php echo $id ?> " 
-            
-            data-content="<h6> Deseja mesmo excluir este registro de usuário ? </h6> <br><p> Aviso , 
-            está ação não pode ser revertida , ao clicar em aceitar os respectivos dados serão apagados permanentemente 
-            da sua base de dados. </p>" data-title="Excluir" data-class="btn btn-success pr-5 pl-5 btn " data-save="Sim"
-            data-close="Fechar"> <i class="btn  ls-ico-cancel-circle text-danger float-right"></i></a></td>
+          <a href="" data-ls-module="modal"  aria-label="Excluir"
+            data-action="delete-user.php?excluir=<?php echo $id ?> "
+            data-content="<h6> Deseja mesmo excluir este registro de usuário ?
+						</h6> <br><p> Aviso ,
+						está ação não pode ser revertida , ao clicar em aceitar os
+						respectivos dados serão apagados permanentemente
+						da sua base de dados. </p>"
+						data-title="Excluir"
+						data-class="btn btn-success pr-5 pl-5 btn "
+						data-save="Sim"
+						data-close="Fechar"> <i class="btn  ls-ico-cancel-circle text-danger
+							float-right"></i></a></td>
 
-            
+
         </tr>
       </tbody>
-     
+
       <?php
       }
       ?>
-      </table>   
+      </table>
   </div>
 </div>
 <div class="col-3"></div>
-</div>         
-    
+</div>
+
     </div>  <!-- fim div container-->
 
-    <div style="height:200px;" class="row"></div> 
+    <div style="height:200px;" class="row"></div>
 
 
   <?php include_once ("../notification_message.php"); ?>
@@ -322,13 +327,13 @@ echo "
     <script type="text/javascript" src="../javascripts/jquery.js"></script>
     <script type="text/javascript" src="../javascripts/locastyle.js"></script>
     <script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
-  
-    <script type="text/javascript"> 
-    function escondeMostra(x){ 
+
+    <script type="text/javascript">
+    function escondeMostra(x){
       x = document.getElementById(x).style.display == "none";){
-        document.getElementById(x).style.display = "inline"; } 
+        document.getElementById(x).style.display = "inline"; }
         else{ document.getElementById(x).style.display = "none"; }
-      } 
+      }
     </script>
 
   </body>

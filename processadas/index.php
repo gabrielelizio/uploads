@@ -39,21 +39,35 @@ include_once("../lib/conexao_banco.php");
 
 	<div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center"> Arquivos Realizados </h1>
-  </div>
-
-
+	</div>
 	<div class="container pt-5">
 
   <div class="row pt-5">
     <div class="col-7">
+
     <form  action="busca-registro_processada.php" class="form-row">
       <label style="width: 70%;" class="ls-label" role="search">
         <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..."
           placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
-      </label>
+			</label>
+
       <div class="btn">
         <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success" title="Buscar">
-      </div>
+			</div>
+			<?php if(isset($_GET['sucesso'])){ ?>    <!-- sucesso ao excluir os dados de uploads-->
+                  <br>
+                    <div class="ls-alert-success ls-dismissable ">
+                  <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
+                 Registro excluído com sucesso. </div>
+						<?php } ?>
+
+						<?php if(isset($_GET['noexcluir'])){ ?>    <!-- Não existe informaçções para excluir.-->
+                  <br>
+                    <div class="ls-alert-danger ls-dismissable ">
+                  <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
+                 Você não possui registros para excluir. </div>
+						<?php } ?>
+
 </form>
     </div>
     <div class="col-2"></div>
@@ -63,7 +77,9 @@ include_once("../lib/conexao_banco.php");
     </div>
 </div>
 
+
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content modal-lg">
@@ -79,21 +95,30 @@ include_once("../lib/conexao_banco.php");
         processados serão apagados permanentemente da sua base de dados.
       </div>
       <div class="modal-footer">
-				<?php
-					$delete = $sql="DELETE * from uploads";
-				?>
+			<a href="" class="btn btn-dark text-center pr-5 pl-5"
+			data-ls-module="modal"
+			data-action="processadas_opcoes.php?excluir"
+			data-content="<h6> Lembrando que não será possível reverter os dados perdidos. <strong>Deseja</strong> ?
+						</h6> <br><p> Aviso ,
+						está ação não pode ser revertida , ao clicar em aceitar os
+						respectivos dados serão apagados permanentemente
+						da sua base de dados. </p>"
+						data-class="btn btn-success pr-5 pl-5 btn"
+						data-save="Sim"
+						data-close="Fechar"
 
-      <a href="index.php?$delete" class="btn btn-dark text-center pr-5 pl-5">
-				<i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a>
+						>
+					<i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a></i></a>
 
 
 
-      </div>
+
+
+		</div>
     </div>
   </div>
-
-
 </div>
+
 <hr>
 <div class="row pt-2">
 <table class="table table-striped table-hover table-responsive-lg">

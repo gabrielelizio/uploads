@@ -11,7 +11,7 @@ error_reporting(0);
 
 <!DOCTYPE html>
 <html class="<?php echo "$vg_theme";?>">
-  <head>
+<head>
     <title><?php echo "$vg_title";?></title>
 
     <meta charset="<?php echo $vg_charset;?>">
@@ -65,23 +65,34 @@ error_reporting(0);
   <table class="table table-striped table-hover">
   <thead class="bg-success">
     <tr>
-      <th class="text-center text-light">Professor</th>
-      <th class="text-center text-light">E-mail</th>
-      <th class="text-center text-light">Telefone</th>
+		<th class="text-center text-light">Professor</th>
       <th class="text-center text-light">Curso</th>
       <th class="text-center text-light">Quantidade</th>
-      <th class="text-center text-light">Opção</th>
+      <th class="text-center text-light">Submissão</th>
+      <th class="text-center text-light">Data Impressão</th>
       <th class="text-center text-light">Arquivo</th>
+      <th class="text-center text-light">Status</th>
       <th></th>
     </tr>
   </thead>
-
+	<style>
+    .finalizado{
+display: inline-block;
+    border-radius: 5px;
+    padding: 10px 15px!important;
+    margin-top: 2px;
+    color: #FFF;
+    background: #FFA500;
+    border: 1px solid #60AB60;
+    }
+  </style>
 <?php
 
 $rastreio = htmlspecialchars($_REQUEST['rastreio']);
 
 $sql = "SELECT * FROM processada WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
 or data_envio like '%$rastreio%' AND status = 'Impresso' ";
+
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 if(mysql_num_rows($resultado) > 0){
 	while($linha=mysql_fetch_array($resultado))
@@ -97,6 +108,11 @@ if(mysql_num_rows($resultado) > 0){
 	$rastreio  = $linha["rastreio"];
 	$data_envio  = date('d/m/Y H:i', strtotime($linha["data_envio"]));
 	$status  = $linha["status"];
+
+	// converte as datas para o formato brasileiro.
+date_default_timezone_set('UTC');
+$data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
+$data2 = date('d/m/Y - H:i:s',strtotime($linha['data_processamento']));
 
 	if($_SESSION["nivel"] == 1){
 
@@ -114,7 +130,7 @@ echo "
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
       </tr>
-	</tbody>";
+  </tbody>";
 
   }else{
 
@@ -133,7 +149,7 @@ echo "
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
       </tr>
-	</tbody>";
+  </tbody>";
 }
 	}
 }
