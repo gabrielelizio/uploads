@@ -65,7 +65,7 @@ include_once("../lib/conexao_banco.php");
                   <br>
                     <div class="ls-alert-danger ls-dismissable ">
                   <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
-                 Você não possui registros para excluir. </div>
+                 Você não possui registros com status Impresso para excluir.  </div>
 						<?php } ?>
 
 </form>

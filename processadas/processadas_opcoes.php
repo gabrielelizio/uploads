@@ -6,7 +6,7 @@ include_once ("../variables_global.php");
 
 if(isset($_GET['excluir'])){
 
-	$sql = "SELECT * FROM uploads";
+	$sql = "SELECT * FROM uploads where status = 'Impresso'";
 	$resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 
 
@@ -25,7 +25,13 @@ if(isset($_GET['excluir'])){
 
 			}
 
-		 $sql= "DELETE FROM uploads";
+			if($_SESSION["nivel"] == 1){
+				$sql = "DELETE FROM uploads where id_prof = '$id' AND status='Impresso'";
+			 }else{
+			 $sql = "DELETE FROM uploads where status='Impresso'";
+			 }
+
+
 		 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 
 		header('Location: index.php?sucesso');

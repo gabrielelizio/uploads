@@ -4,10 +4,10 @@ function conecta( $maquina , $usuario, $senha, $banco, $sql )
 {
 	@header("Content-type: text/html; charset=utf-8");
 
-	$conexao = mysql_connect($maquina,$usuario,$senha) or die("<center><h1>Falha na conexao com o banco de dados</h1></center>"); 
+	$conexao = mysql_connect($maquina,$usuario,$senha) or die("<center><h1>Falha na conexao com o banco de dados</h1></center>");
 	//$charset=mysql_set_charset($conexao,"utf8");
-	$db = mysql_select_db($banco,$conexao) or die("<center><h1>Falha na sele��o do banco</h1></center>");
-	$resultado = mysql_query($sql,$conexao) or die("<center><h1>Imposs�vel realizar query.</h1></center>");
+	$db = mysql_select_db($banco,$conexao) or die("<center><h1>Falha na selecaoo do banco</h1></center>");
+	$resultado = mysql_query($sql,$conexao) or die("<center><h1>Impossivel realizar query.</h1></center>");
 	mysql_close($conexao);
 	return $resultado;
 }
@@ -15,7 +15,7 @@ function conecta( $maquina , $usuario, $senha, $banco, $sql )
 
 
 function diferenca_data($data_envio)
-{	
+{
 	date_default_timezone_set('America/Sao_Paulo');
 	$dataAtual = date("Y-m-d G:i:s");
 	$datatime1 = new DateTime($data_envio);
@@ -90,7 +90,7 @@ function limpaCPF_CNPJ($valor){
 function email($email,$assunto,$mensagem)
 {
 	mail($email, $assunto, $mensagem);
-	
+
 }
 
 
@@ -102,7 +102,7 @@ date_default_timezone_set('America/Sao_Paulo');
 $hora=date("d-m-Y H:i:s");
 $data=date("d-m-Y");
 
-$sql = "insert into logs_2(COD_USUARIOS_SISTEMA,DATA_LOGS,HORA_LOGS,TIPO_LOGS,ACAO,IP_LOGS) 
+$sql = "insert into logs_2(COD_USUARIOS_SISTEMA,DATA_LOGS,HORA_LOGS,TIPO_LOGS,ACAO,IP_LOGS)
 VALUES ('$COD_USUARIOS_SISTEMA','$data','$hora','$TIPO_LOGS','$ACAO','$IP')";
 $resultado = conecta($maquina,$usuario,$senha,$banco,$sql);
 
