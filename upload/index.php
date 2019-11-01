@@ -37,9 +37,30 @@
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center "> Upload de Provas </h1>
 	</div>
 	<div class="container pt-5">
-
-
+		
 		<div class="row">
+			<div class="col-12">
+				<div  data-ls-module="collapse" data-target="#0" class="ls-collapse ">
+					<a href="#" style="text-decoration:none" class="ls-collapse-header">
+					<h1 class="ls-collapse-title "> <span class="ls-text-primary" style="font-size: 14pt; color: #f15c2f;" >
+					 * Importante </span>  </h1>
+					</a>
+					<div style="background: #fff" class="ls-collapse-body" id="0">
+					<p style="font-size: 12pt;" class=" text-success pt-3">
+					&emsp;&emsp;Atenção professor, considere os seguintes requisitos para enviar sua prova. 
+					</p>
+					<p style="font-size: 12pt;">
+						<li> Tamanho máximo 2 Folhas </li>
+						<li> ... </li> 
+						<li> ...</li> 
+						<li> ... </li>  
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row pt-5">
 			<div class="col-1"></div>
 			<div class="col-10">
 
@@ -258,6 +279,14 @@
 
 <div class="row pt-5">
 	<label class="ls-label col-4">
+		<b class="ls-label-text">Preencha o nome da disciplina do curso:</b>
+		<p class="text-info"> * Limite máximo de 1 arquivo por disciplina.</p>
+		<input class="form-control" type="text" name="disciplina" placeholder="Informe a disciplina" required >
+	</label>
+</div>
+
+<div class="row pt-5">
+	<label class="ls-label col-4">
 		<b class="ls-label-text">Preencha o código dos cursos selecionados:</b>
 		<input class="form-control" type="text" name="codturmas" placeholder="Código do(s) curso(s)" required >
 	</label>
@@ -266,15 +295,21 @@
 <br>
 <div class="row">
 	<div class="ls-label col-8">
-		<p><b>Escolha uma opção de impressão:</b></p>
-			<label class="ls-label-text">
-				<input type="radio" name="opcaoimpressao" value="FrenteVerso" checked="checked">
-				Frente e Verso
-			</label>
-			<label class="ls-label-text">
-				<input type="radio" name="opcaoimpressao" value="Frente">
-				Frente
-			</label>
+	<label class="ls-label col-6">
+			<b class="ls-label-text"> Dia da Semana </b>
+				<p class="text-info"> * Informe o dia da semana que você vai aplicar a prova.</p>
+			<div class="ls-custom-select">
+				<select name="dia" class="form-control">
+					<option value="Segunda">Segunda-Feira</option>
+					<option value="Terça">Terça-Feira </option>
+					<option value="Quarta">Quarta-Feira </option>
+					<option value="Quinta">Quinta-Feira</option>
+					<option value="Sexta">Sexta-feira </option>
+					<option value="Sabádo">Sábado</option>
+					<option value="Domingo">Domingo</option>
+				</select>
+			</div>
+		</label>
 	</div>
 </div>
 
