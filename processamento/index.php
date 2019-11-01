@@ -39,6 +39,7 @@ include_once("../lib/conexao_banco.php");
 	<h1 class="ls-title-intro ls-ico-checkmark-circle pl-5 text-right "> Processamento dos Arquivos / Impressão </h1>
 	</div>
 	<div class="container pt-5">
+	
   
   <div class="row">
       <div class="col-6">
@@ -52,8 +53,12 @@ include_once("../lib/conexao_banco.php");
 </form>
       </div>
   </div>
+  </div>
 <hr>
-  <div class="row pt-5">
+
+
+<div class="container-fluid">
+  <div class="row pt-5 pl-5 pr-5">
     <table class="table table-striped table-hover pt-5">
   <thead class="bg-success">
     <tr>
@@ -61,8 +66,9 @@ include_once("../lib/conexao_banco.php");
       <th class="text-center text-light text-primary">E-mail</th>
       <th class="text-center text-light text-primary">Data envio</th>
       <th class="text-center text-light text-primary">Curso</th>
+      <th class="text-center text-light text-primary">Disciplina</th>
+      <th class="text-center text-light text-primary">Dia da semana </th>
       <th class="text-center text-light text-primary">Quantidade</th>
-      <th class="text-center text-light text-primary">Opção</th>
       <th class="text-center text-light text-primary">Arquivo</th>
      <!-- <th class="text-center text-light text-primary">Excluir</th>  add opção de excluir registro -->  
       <th></th>
@@ -85,12 +91,13 @@ $email = $linha["email"];
 $telefone = $linha["telefone"];
 $proposito = $linha["proposito"];
 $cursos = $linha["cursos"];
-$opcaoimpressao = $linha["opcaoimpressao"];
+$disciplina = $linha["disciplina"];
 $qtdecopias  = $linha["qtdecopias"];
 $patharq  = $linha["patharq"];
 $rastreio  = $linha["rastreio"];
 $data_envio  = $linha["data_envio"];
 $status  = $linha["status"];
+$dia_semana = $linha["dia_semana"];
 
 
 $diferenca_hora = diferenca_data($data_envio);
@@ -104,7 +111,7 @@ $data2 = date('d/m/Y - H:i:s',strtotime($linha['data_processamento']));
 
 
 if($_SESSION["nivel"] == 1){
-   
+
 echo "
 <tbody>
       <tr>
@@ -114,8 +121,9 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor> $data1</a></td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup'><a href='#'></a>
         </td>
@@ -134,10 +142,11 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor>  $data1 </a></td></td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
+        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
         </td>
       </tr>
   </tbody>";
@@ -149,7 +158,7 @@ echo "
 ?>
 </table>
 </div>
-
+</div>
 
   <?php include_once("../notification_message.php"); ?>
 

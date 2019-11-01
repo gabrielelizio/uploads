@@ -84,19 +84,6 @@
 
 		<hr>
 
-	<!-- <div class="row">
-		<b class="ls-label-text col-12" >Para cadastrar um novo Curso, informe o nome abaixo:</b>
-	</div> -->
-<!--<
-	<fieldset>
-		<div class="ls-label col-md-5">
-		<form action="cadastrocurso.php">
-		<input name =cadastrocurso>
-		<button className= "Cadastrar">
-	</form>
-	</div>
-	</fieldset>
-	<fieldset> -->
 			<!-- Exemplo com Checkbox -->
 		<div class="row">
 		<p>Selecione o(s) cursos abaixo:</p>
@@ -299,12 +286,12 @@
 			<b class="ls-label-text"> Dia da Semana </b>
 				<p class="text-info"> * Informe o dia da semana que você vai aplicar a prova.</p>
 			<div class="ls-custom-select">
-				<select name="dia" class="form-control">
-					<option value="Segunda">Segunda-Feira</option>
-					<option value="Terça">Terça-Feira </option>
-					<option value="Quarta">Quarta-Feira </option>
-					<option value="Quinta">Quinta-Feira</option>
-					<option value="Sexta">Sexta-feira </option>
+				<select name="dia_semana" class="form-control">
+					<option value="Segunda-feira">Segunda-Feira</option>
+					<option value="Terça-feira">Terça-Feira </option>
+					<option value="Quarta-feira">Quarta-Feira </option>
+					<option value="Quinta-feira">Quinta-Feira</option>
+					<option value="Sexta-feira">Sexta-feira </option>
 					<option value="Sabádo">Sábado</option>
 					<option value="Domingo">Domingo</option>
 				</select>

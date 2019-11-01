@@ -62,8 +62,8 @@ error_reporting(0);
     
   <hr class="pt-4">
 
-  <div class="container">
-  <div class="row pt-3">
+  <div class="container-fluid">
+  <div class="row pt-3 pl-5 pr-5">
     <table class="table table-striped table-hover">
   <thead class="bg-success">
     <tr>
@@ -71,8 +71,9 @@ error_reporting(0);
       <th class="text-center text-light">E-mail</th>
       <th class="text-center text-light">Data Envio</th>
       <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Dia da semana</th>
       <th class="text-center text-light">Quantidade</th>
-      <th class="text-center text-light">Opção</th>
       <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
@@ -82,8 +83,9 @@ error_reporting(0);
 
 $rastreio = htmlspecialchars($_REQUEST['rastreio']);
 
-$sql = "SELECT * FROM pendente WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
-or data_envio like '%$rastreio%'";
+$sql = "SELECT * FROM pendente WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or disciplina like '%$rastreio%' 
+or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
+or dia_semana like '%$rastreio%' or data_envio like '%$rastreio%'";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 if(mysql_num_rows($resultado) > 0){
 	while($linha=mysql_fetch_array($resultado))
@@ -93,12 +95,17 @@ if(mysql_num_rows($resultado) > 0){
 	$telefone = $linha["telefone"];
 	$proposito = $linha["proposito"];
 	$cursos = $linha["cursos"];
-	$opcaoimpressao = $linha["opcaoimpressao"];
+	$disciplina = $linha["disciplina"];
 	$qtdecopias  = $linha["qtdecopias"];
 	$patharq  = $linha["patharq"];
 	$rastreio  = $linha["rastreio"];
 	$data_envio  = $linha["data_envio"];
-	$status  = $linha["status"];
+  $status  = $linha["status"];
+  $dia_semana = $linha["dia_semana"];
+  
+date_default_timezone_set('UTC');
+$data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
+
 
 	if($_SESSION["nivel"] == 1){
    
@@ -110,10 +117,11 @@ echo "
            
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'>$data_envio</td>
+        <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup'><a href='#'></a>
         </td>
@@ -124,21 +132,20 @@ echo "
    
   
 
-
 echo "
 <tbody>
       <tr>
         <td>
           <a href='#'>$nome</a>
-           
         </td>
         <td class='ls-txt-center'>$email</td>
-        <td class='ls-txt-center'>$data_envio</td>
+        <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
+        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
         </td>
       </tr>
   </tbody>";

@@ -34,11 +34,12 @@ exit;
 $id_prof = $_SESSION["id"];
 $nome = htmlspecialchars($_REQUEST['nome']);
 $email = htmlspecialchars($_REQUEST['email']);
-$opcaoimpressao = htmlspecialchars($_REQUEST['opcaoimpressao']);
+$disciplina = htmlspecialchars($_REQUEST['disciplina']);
 $telefone = htmlspecialchars($_REQUEST['telefone']);
 $qtdecopias  = htmlspecialchars($_REQUEST['qtdecopias']);
 $proposito  = htmlspecialchars($_REQUEST['proposito']);
 $codturmas  = htmlspecialchars($_REQUEST['codturmas']);
+$dia_semana = htmlspecialchars($_REQUEST['dia_semana']);
 $curso  = $_REQUEST['curso'];
 $newcurso=$curso[0];
 for($i = 1; $i < count($curso); $i++)
@@ -115,13 +116,13 @@ if (move_uploaded_file($_FILES['arquivo']['tmp_name'][$i], $_UP['pasta'] . $nome
 {
 $codturmas = $codturmas;
 $status="Pendente";
-$sql = "INSERT INTO `systemsauer`.`uploads` (`id_prof`, `nome`, `email`, `telefone`, `cursos`, `opcaoimpressao`, `qtdecopias`, `patharq`, `proposito`, `rastreio`, `data_envio`, `status`, `codigos_turmas`)
-VALUES ('$id_prof', '$nome', '$email', '$telefone', '$curso', '$opcaoimpressao', '$qtdecopias', '$path_arq', '$proposito', '$rastreio', '$datahora', '$status', '$codturmas');";
+$sql = "INSERT INTO `systemsauer`.`uploads` (`id_prof`, `nome`, `email`, `telefone`, `cursos`, `disciplina`, `qtdecopias`, `patharq`, `proposito`, `rastreio`, `data_envio`, `status`, `codigos_turmas`,`dia_semana`)
+VALUES ('$id_prof', '$nome', '$email', '$telefone', '$curso', '$disciplina', '$qtdecopias', '$path_arq', '$proposito', '$rastreio', '$datahora', '$status', '$codturmas','$dia_semana');";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 
 $assunto="Upload para Impressão - Enviado para processamento";
 $Mensagem="Prezado $nome,\n\n Segue abaixo o status do processamento do arquivo enviado para impressão:\n
-\tData do processamento: $data_envio.\n\tSituação da Inpressão: $status.\n\tQuantidade de Cópias: $qtdecopias. \n\tOpção de Impressão: $opcaoimpressao. \n\tCod. rastreio: $rastreio.
+\tData do processamento: $data_envio.\n\tSituação da Inpressão: $status.\n\tQuantidade de Cópias: $qtdecopias. \n\tDisciplina $disciplina. \n\tCod. rastreio: $rastreio.
 \n\n
 Qualquer dúvida e/ou esclarecimento, nos contate.\n\n
 \t\t Equipe SICP - Pitágoras Contagem.";
@@ -136,6 +137,6 @@ enviaemail($nome,$email,$Mensagem,$assunto);
 ////////////// FIM DO UPLOPAD DO ARQUIVO
 }//end for
 $hostname=$_SERVER['SERVER_NAME'];
-@header("Location:http://$hostname/uploads/upload/confirmacao.php?nome=$nome&email=$email&curso=$curso&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&path_arq=$path_arq&proposito=$proposito&rastreio=$rastreio&datahora=$datahora");
+@header("Location:http://$hostname/uploads/upload/confirmacao.php?nome=$nome&email=$email&curso=$curso&disciplina=$disciplina&qtdecopias=$qtdecopias&path_arq=$path_arq&proposito=$proposito&rastreio=$rastreio&datahora=$datahora&dia_semana=$dia_semana");
 exit;
 ?>

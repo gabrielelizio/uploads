@@ -7,7 +7,7 @@ include_once("../variables_global.php");
 $nome = htmlspecialchars($_REQUEST['nome']);
 $email = htmlspecialchars($_REQUEST['email']);
 $telefone = htmlspecialchars($_REQUEST['telefone']);
-$opcaoimpressao = htmlspecialchars($_REQUEST['opcaoimpressao']);
+$disciplina = htmlspecialchars($_REQUEST['disciplina']);
 $qtdecopias  = htmlspecialchars($_REQUEST['qtdecopias']);
 $proposito  = htmlspecialchars($_REQUEST['proposito']);
 $cursos = htmlspecialchars($_REQUEST['cursos']);
@@ -15,7 +15,6 @@ $patharq  = htmlspecialchars($_REQUEST['patharq']);
 $rastreio  = htmlspecialchars($_REQUEST['rastreio']);
 $data_envio  = htmlspecialchars($_REQUEST['data_envio']);
 $status  = htmlspecialchars($_REQUEST['status']);
-
 
 ?>
 <!DOCTYPE html>
@@ -35,14 +34,13 @@ $status  = htmlspecialchars($_REQUEST['status']);
  </head>
   <body>
     
-
-<?php
-  if($_SESSION["nivel"] == 1){
-      require_once("../menu-professor.php");
-  }else{
-      require_once("../menu-sicp.php");
-  }
-?>
+  <?php
+		if($_SESSION["nivel"] == 1){
+				require_once("../menu-professor.php");
+		}else{
+				require_once("../menu-sicp.php");
+		}
+	?>
 
   
       <div class="container-fluid pt-5 text-right">
@@ -95,8 +93,8 @@ $status  = htmlspecialchars($_REQUEST['status']);
       </label>
 
       <label class="ls-label col-md-6 col-lg-8">
-        <b class="text-success">Opção de impressão:</b>
-          <input class=" form-control border border-success" type="text" value='<?php echo $opcaoimpressao;?>' required>
+        <b class="text-success">Disciplina:</b>
+          <input class=" form-control border border-success" type="text" value='<?php echo $disciplina;?>' required>
       </label>
 
       <label class="ls-label col-md-6 col-lg-8">

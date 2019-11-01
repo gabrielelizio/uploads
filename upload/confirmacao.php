@@ -6,13 +6,15 @@ include_once("../variables_global.php");
 
 $nome = htmlspecialchars($_REQUEST['nome']);
 $email = htmlspecialchars($_REQUEST['email']);
-$opcaoimpressao = htmlspecialchars($_REQUEST['opcaoimpressao']);
+$disciplina = htmlspecialchars($_REQUEST['disciplina']);
 $qtdecopias  = htmlspecialchars($_REQUEST['qtdecopias']);
 $proposito  = htmlspecialchars($_REQUEST['proposito']);
 $curso=htmlspecialchars($_REQUEST['curso']);
 $path_arq=htmlspecialchars($_REQUEST['path_arq']);
 $rastreio=htmlspecialchars($_REQUEST['rastreio']);
 $datahora=htmlspecialchars($_REQUEST['datahora']);
+$dia_semana = htmlspecialchars($_REQUEST['dia_semana']);
+
 
 ?>
 <!DOCTYPE html>
@@ -32,13 +34,14 @@ $datahora=htmlspecialchars($_REQUEST['datahora']);
   </head>
   <body>
 
-<?php
-  if($_SESSION["nivel"] == 1){
-      require_once("../menu-professor.php");
-  }else{
-      require_once("../menu-sicp.php");
-  }
-?>
+  <?php
+		if($_SESSION["nivel"] == 1){
+				require_once("../menu-professor.php");
+		}else{
+				require_once("../menu-sicp.php");
+		}
+	?>
+
 
 <div class=" container-fluid pt-5 text-center">
 	<h1 class="ls-title-intro ls-ico-upload text-right">  Arquivo Enviado </h1>
@@ -67,9 +70,10 @@ $datahora=htmlspecialchars($_REQUEST['datahora']);
         <p><b>Solicitante:</b> <?php echo "$nome";?> </p> 
         <p><b>E-mail:</b> <?php echo "$email";?> </p>
         <p><b>Data:</b> <?php echo @date('d/m/Y H:i', @strtotime($datahora)) ?> </p>
-        <p><b>Opção de impressão:</b> <?php echo "$opcaoimpressao";?>  </p>
+        <p><b>Disciplina:</b> <?php echo "$disciplina";?>  </p>
         <p><b>Propósito:</b> <?php echo "$proposito";?></p>
         <p><b>Qtde. cópias:</b><?php echo "$qtdecopias";?></p>
+        <p><b>Dia da prova:</b><?php echo "$dia_semana";?></p>
         <p><b>Arquivo:</b> <?php echo "$path_arq";?></p>
         <p><b>Cod. Rastreio:</b> <?php echo "$rastreio";?></p>
         <p><b style="color: #F00">Obs:</b> Guarde seu código de rastreio para eventuais consultas.</p>
