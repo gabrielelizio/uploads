@@ -40,7 +40,7 @@
 		
 		<div class="row">
 			<div class="col-12">
-				<div  data-ls-module="collapse" data-target="#0" class="ls-collapse ">
+				<div style="background: #efe7e7;" data-ls-module="collapse" data-target="#0" class="ls-collapse ">
 					<a href="#" style="text-decoration:none" class="ls-collapse-header">
 					<h1 class="ls-collapse-title "> <span class="ls-text-primary" style="font-size: 14pt; color: #f15c2f;" >
 					 * Importante </span>  </h1>
@@ -299,6 +299,18 @@
 		</label>
 	</div>
 </div>
+
+
+<div class="ls-label col-md-5">
+    <p><b>Turno:</b></p>
+    <label class="ls-label-text">
+        <input type="radio" name="turno" value="Manhã" checked="checked">
+        Manhã &nbsp;&nbsp;
+        <input  type="radio" name="turno" value="Noite">
+        Noite
+    </label>
+    </div>
+
 
 <br>
 <div class="row">

@@ -40,6 +40,7 @@ $qtdecopias  = htmlspecialchars($_REQUEST['qtdecopias']);
 $proposito  = htmlspecialchars($_REQUEST['proposito']);
 $codturmas  = htmlspecialchars($_REQUEST['codturmas']);
 $dia_semana = htmlspecialchars($_REQUEST['dia_semana']);
+$turno = htmlspecialchars($_REQUEST['turno']);
 $curso  = $_REQUEST['curso'];
 $newcurso=$curso[0];
 for($i = 1; $i < count($curso); $i++)
@@ -116,8 +117,8 @@ if (move_uploaded_file($_FILES['arquivo']['tmp_name'][$i], $_UP['pasta'] . $nome
 {
 $codturmas = $codturmas;
 $status="Pendente";
-$sql = "INSERT INTO `systemsauer`.`uploads` (`id_prof`, `nome`, `email`, `telefone`, `cursos`, `disciplina`, `qtdecopias`, `patharq`, `proposito`, `rastreio`, `data_envio`, `status`, `codigos_turmas`,`dia_semana`)
-VALUES ('$id_prof', '$nome', '$email', '$telefone', '$curso', '$disciplina', '$qtdecopias', '$path_arq', '$proposito', '$rastreio', '$datahora', '$status', '$codturmas','$dia_semana');";
+$sql = "INSERT INTO `systemsauer`.`uploads` (`id_prof`, `nome`, `email`, `telefone`, `cursos`, `disciplina`, `qtdecopias`, `patharq`, `proposito`, `rastreio`, `data_envio`, `status`, `codigos_turmas`,`dia_semana`,`turno`)
+VALUES ('$id_prof', '$nome', '$email', '$telefone', '$curso', '$disciplina', '$qtdecopias', '$path_arq', '$proposito', '$rastreio', '$datahora', '$status', '$codturmas','$dia_semana','$turno');";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 
 $assunto="Upload para Impressão - Enviado para processamento";
@@ -137,6 +138,6 @@ enviaemail($nome,$email,$Mensagem,$assunto);
 ////////////// FIM DO UPLOPAD DO ARQUIVO
 }//end for
 $hostname=$_SERVER['SERVER_NAME'];
-@header("Location:http://$hostname/uploads/upload/confirmacao.php?nome=$nome&email=$email&curso=$curso&disciplina=$disciplina&qtdecopias=$qtdecopias&path_arq=$path_arq&proposito=$proposito&rastreio=$rastreio&datahora=$datahora&dia_semana=$dia_semana");
+@header("Location:http://$hostname/uploads/upload/confirmacao.php?nome=$nome&email=$email&curso=$curso&disciplina=$disciplina&qtdecopias=$qtdecopias&path_arq=$path_arq&proposito=$proposito&rastreio=$rastreio&datahora=$datahora&dia_semana=$dia_semana&turno=$turno");
 exit;
 ?>

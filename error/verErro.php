@@ -7,7 +7,7 @@ include_once("../variables_global.php");
 $nome = htmlspecialchars($_REQUEST['nome']);
 $email = htmlspecialchars($_REQUEST['email']);
 $telefone = htmlspecialchars($_REQUEST['telefone']);
-$opcaoimpressao = htmlspecialchars($_REQUEST['opcaoimpressao']);
+$disciplina = htmlspecialchars($_REQUEST['disciplina']);
 $qtdecopias  = htmlspecialchars($_REQUEST['qtdecopias']);
 $proposito  = htmlspecialchars($_REQUEST['proposito']);
 $cursos = htmlspecialchars($_REQUEST['cursos']);
@@ -17,6 +17,7 @@ $data_envio  = htmlspecialchars($_REQUEST['data_envio']);
 $status  = htmlspecialchars($_REQUEST['status']);
 $observacao  = htmlspecialchars($_REQUEST['observacao']);
 $data_processamento  = htmlspecialchars($_REQUEST['data_processamento']);
+$turno  = htmlspecialchars($_REQUEST['turno']);
 
 //$observacao  = "1";
 //$data_processamento  = "2";
@@ -94,6 +95,21 @@ $data_processamento  = htmlspecialchars($_REQUEST['data_processamento']);
       </label>
 
       <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Curso(s):</b>
+        <input class="form-control border border-success" type="text" value='<?php echo $cursos;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Disciplina:</b>
+        <input class="form-control border border-success" type="text" value='<?php echo $disciplina;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Turno:</b>
+        <input class="form-control border border-success" type="text" value='<?php echo $turno;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
         <b class="text-success">Quantidade de Impressões:</b>
         <input class="form-control border border-success" type="text" value='<?php echo $qtdecopias;?>' required>
       </label>
@@ -108,10 +124,7 @@ $data_processamento  = htmlspecialchars($_REQUEST['data_processamento']);
         <input class="form-control border border-success" type="text" value='<?php echo $data_envio;?>' required>
       </label>
 
-      <label class="ls-label col-md-6 col-lg-8">
-        <b class="text-success">Opção de impressão:</b>
-          <input class="form-control border border-success" type="text" value='<?php echo $opcaoimpressao;?>' required>
-      </label>
+     
 
       <label class="ls-label col-md-6 col-lg-8">
         <b class="text-danger">Arquivo:</b>
@@ -132,7 +145,7 @@ $data_processamento  = htmlspecialchars($_REQUEST['data_processamento']);
 
   <label class="ls-label col-md-6 col-lg-8">
         <b class="text-success">Observação:</b>
-        <input class="form-control border border-success" type="text" name="rastreio" value='<?php echo $observacao;?>' required>
+        <input class="form-control border border-success" type="text" name="rastreio" value='<?php echo $observacao;?>' autocomplete="off" required>
   </label>
     
 

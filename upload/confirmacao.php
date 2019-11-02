@@ -14,6 +14,7 @@ $path_arq=htmlspecialchars($_REQUEST['path_arq']);
 $rastreio=htmlspecialchars($_REQUEST['rastreio']);
 $datahora=htmlspecialchars($_REQUEST['datahora']);
 $dia_semana = htmlspecialchars($_REQUEST['dia_semana']);
+$turno = htmlspecialchars($_REQUEST['turno']);
 
 
 ?>
@@ -69,8 +70,10 @@ $dia_semana = htmlspecialchars($_REQUEST['dia_semana']);
         <p>---------------------------------------------------------------------------------</p>
         <p><b>Solicitante:</b> <?php echo "$nome";?> </p> 
         <p><b>E-mail:</b> <?php echo "$email";?> </p>
-        <p><b>Data:</b> <?php echo @date('d/m/Y H:i', @strtotime($datahora)) ?> </p>
+        <p><b>Data de envio:</b> <?php echo @date('d/m/Y H:i', @strtotime($datahora)) ?> </p>
+        <p><b>Curso(s):</b> <?php echo "$curso";?>  </p>
         <p><b>Disciplina:</b> <?php echo "$disciplina";?>  </p>
+        <p><b>Turno:</b> <?php echo "$turno";?>  </p>
         <p><b>Propósito:</b> <?php echo "$proposito";?></p>
         <p><b>Qtde. cópias:</b><?php echo "$qtdecopias";?></p>
         <p><b>Dia da prova:</b><?php echo "$dia_semana";?></p>

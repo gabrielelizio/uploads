@@ -16,6 +16,7 @@ $rastreio  = htmlspecialchars($_REQUEST['rastreio']);
 $data_envio  = htmlspecialchars($_REQUEST['data_envio']);
 $status  = htmlspecialchars($_REQUEST['status']);
 
+
 ?>
 <!DOCTYPE html>
 <html class="<?php echo "$vg_theme";?>">
@@ -93,9 +94,16 @@ $status  = htmlspecialchars($_REQUEST['status']);
       </label>
 
       <label class="ls-label col-md-6 col-lg-8">
+        <b class="text-success">Curso(s):</b>
+          <input class=" form-control border border-success" type="text" value='<?php echo $cursos;?>' required>
+      </label>
+
+      <label class="ls-label col-md-6 col-lg-8">
         <b class="text-success">Disciplina:</b>
           <input class=" form-control border border-success" type="text" value='<?php echo $disciplina;?>' required>
       </label>
+
+
 
       <label class="ls-label col-md-6 col-lg-8">
         <b class="text-success">Arquivo:</b>

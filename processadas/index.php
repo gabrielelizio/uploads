@@ -109,23 +109,22 @@ include_once("../lib/conexao_banco.php");
 
 						>
 					<i class="ls-ico-remove ls-text-xl"></i> Estou ciente</a></i></a>
-
-
-
-
-
 		</div>
     </div>
   </div>
 </div>
+</div>
 
 <hr>
-<div class="row pt-2">
+<div class="container-fluid">
+<div class="row pt-2 pr-5 pl-5">
 <table class="table table-striped table-hover table-responsive-lg">
   <thead class="bg-success">
     <tr>
       <th class="text-center text-light">Professor</th>
       <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Turno</th>
       <th class="text-center text-light">Quantidade</th>
       <th class="text-center text-light">Submissão</th>
       <th class="text-center text-light">Data Impressão</th>
@@ -160,12 +159,14 @@ $nome = $linha["nome"];
 $email = $linha["email"];
 $proposito = $linha["proposito"];
 $cursos = $linha["cursos"];
-$opcaoimpressao = $linha["opcaoimpressao"];
+$disciplina = $linha["disciplina"];
 $qtdecopias  = $linha["qtdecopias"];
 $patharq  = $linha["patharq"];
 $rastreio  = $linha["rastreio"];
 $data_envio  = $linha["data_envio"];
 $data_processamento  = $linha["data_processamento"];
+$dia_semana = $linha["dia_semana"];
+$turno = $linha["turno"];
 
 
 // converte as datas para o formato brasileiro.
@@ -178,14 +179,15 @@ echo "
       <tr>
         <td>
           <a href='#'>$nome</a>
-
         </td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
+        <td class='ls-txt-left ls-regroup finalizado'>Impresso</td>
       </tr>
   </tbody>";
 

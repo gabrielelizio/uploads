@@ -54,10 +54,17 @@ include_once("../lib/conexao_banco.php");
     </div>
 </form>
     </div>
+    <div class="col-2"></div>
+    <div class="col-3">
+        <a class="btn btn-secondary float-right text-light" data-toggle="modal" data-target="#exampleModalCenter">
+          <i class="ls-ico-remove ls-text-xl"></i> Limpar Registros</a>
+    </div>
+</div>
 </div>
 
 
-<div class="row pt-3">
+<div class="container-fluid">
+<div class="row pt-5 pr-5 pl-5">
 
     <table class="table table-striped table-hover">
   <thead class="bg-success">
@@ -66,8 +73,10 @@ include_once("../lib/conexao_banco.php");
       <th class="text-center text-light">E-mail</th>
       <th class="text-center text-light">Data envio</th>
       <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Turno</th>
+      <th class="text-center text-light">Dia da semana</th>
       <th class="text-center text-light">Quantidade</th>
-      <th class="text-center text-light">Opção</th>
       <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
@@ -90,7 +99,7 @@ $email = $linha["email"];
 $telefone = $linha["telefone"];
 $proposito = $linha["proposito"];
 $cursos = $linha["cursos"];
-$opcaoimpressao = $linha["opcaoimpressao"];
+$disciplina = $linha["disciplina"];
 $qtdecopias  = $linha["qtdecopias"];
 $patharq  = $linha["patharq"];
 $rastreio  = $linha["rastreio"];
@@ -98,6 +107,8 @@ $data_envio  = $linha["data_envio"];
 $status  = $linha["status"];
 $observacao  = $linha["observacao"];
 $data_processamento = $linha["data_processamento"];
+$dia_semana= $linha["dia_semana"];
+$turno = $linha["turno"];
 
 
 $diferenca_hora = diferenca_data($data_envio);
@@ -121,10 +132,12 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor> $data1 </a></td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2' class='ls-btn ls-btn-sm'>Ver Erro</a>
+        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2&dia-semana=$dia_semana&turno=$turno' class='ls-btn ls-btn-sm'>Ver Erro</a>
         </td>
       </tr>
         </td>
@@ -144,10 +157,12 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'><a href='#' $cor> $data1</a></td></td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
+        <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2' class='ls-btn ls-btn-sm'>Ver Erro</a>
+        <td class='ls-txt-right ls-regroup'><a href='verErro.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data1&status=$status&observacao=$observacao&data_processamento=$data2&dia-semana=$dia_semana&turno=$turno' class='ls-btn ls-btn-sm'>Ver Erro</a>
         </td>
       </tr>
   </tbody>";

@@ -72,6 +72,7 @@ error_reporting(0);
       <th class="text-center text-light">Data Envio</th>
       <th class="text-center text-light">Curso</th>
       <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Turno</th>
       <th class="text-center text-light">Dia da semana</th>
       <th class="text-center text-light">Quantidade</th>
       <th class="text-center text-light">Arquivo</th>
@@ -85,7 +86,7 @@ $rastreio = htmlspecialchars($_REQUEST['rastreio']);
 
 $sql = "SELECT * FROM pendente WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or disciplina like '%$rastreio%' 
 or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
-or dia_semana like '%$rastreio%' or data_envio like '%$rastreio%'";
+or dia_semana like '%$rastreio%' or turno like '%$rastreio%' or data_envio like '%$rastreio%'";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 if(mysql_num_rows($resultado) > 0){
 	while($linha=mysql_fetch_array($resultado))
@@ -102,6 +103,7 @@ if(mysql_num_rows($resultado) > 0){
 	$data_envio  = $linha["data_envio"];
   $status  = $linha["status"];
   $dia_semana = $linha["dia_semana"];
+  $turno = $linha["turno"];
   
 date_default_timezone_set('UTC');
 $data1 = date('d/m/Y - H:i:s',strtotime($linha['data_envio']));
@@ -120,6 +122,7 @@ echo "
         <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
@@ -142,10 +145,11 @@ echo "
         <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
+        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status&dia_semana=$dia_semana&turno=$turno' class='ls-btn ls-btn-sm'>Processar</a>
         </td>
       </tr>
   </tbody>";

@@ -59,14 +59,19 @@ error_reporting(0);
     <a style="margin-top: -5px" class="voltar btn btn-danger ls-float-left-xs" href="index.php"> Voltar a lista de registros</a>
     </div>
   </div>
+  </div>
 
-  <div class="row pt-5">
+  <div class="container-fluid">
+
+  <div class="row pt-5 pr-5 pl-5">
 
   <table class="table table-striped table-hover">
   <thead class="bg-success">
     <tr>
 		<th class="text-center text-light">Professor</th>
       <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Turno</th>
       <th class="text-center text-light">Quantidade</th>
       <th class="text-center text-light">Submissão</th>
       <th class="text-center text-light">Data Impressão</th>
@@ -91,7 +96,7 @@ display: inline-block;
 $rastreio = htmlspecialchars($_REQUEST['rastreio']);
 
 $sql = "SELECT * FROM processada WHERE nome like '%$rastreio%' or proposito like '%$rastreio%' or email like '%$rastreio%' or telefone like '%$rastreio%' or cursos like '%$rastreio%' or qtdecopias like '%$rastreio%'
-or data_envio like '%$rastreio%' AND status = 'Impresso' ";
+or data_envio like '%$rastreio%' or disciplina like '%$rastreio%' or turno like '%$rastreio%' AND status = 'Impresso' ";
 
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 if(mysql_num_rows($resultado) > 0){
@@ -102,12 +107,14 @@ if(mysql_num_rows($resultado) > 0){
 	$telefone = $linha["telefone"];
 	$proposito = $linha["proposito"];
 	$cursos = $linha["cursos"];
-	$opcaoimpressao = $linha["opcaoimpressao"];
+	$disciplina = $linha["disciplina"];
 	$qtdecopias  = $linha["qtdecopias"];
 	$patharq  = $linha["patharq"];
 	$rastreio  = $linha["rastreio"];
 	$data_envio  = date('d/m/Y H:i', strtotime($linha["data_envio"]));
-	$status  = $linha["status"];
+  $status  = $linha["status"];
+  $turno  = $linha["turno"];
+  $dia_semana  = $linha["dia_semana"];
 
 	// converte as datas para o formato brasileiro.
 date_default_timezone_set('UTC');
@@ -124,11 +131,13 @@ echo "
 
         </td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
+        <td class='text-right ls-regroup finalizado'>Impresso</td>
       </tr>
   </tbody>";
 
@@ -143,11 +152,13 @@ echo "
 
         </td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'>$data1</td>
         <td class='ls-txt-center'>$data2</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup finalizado'>Impresso</td>
+        <td class='text-left ls-regroup finalizado'>Impresso</td>
       </tr>
   </tbody>";
 }

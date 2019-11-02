@@ -57,8 +57,11 @@ error_reporting(0);
       <a style="margin-top: -6px" class="voltar voltar btn btn-danger btn-group-lg ls-float-left" href="index.php">Voltar a lista de registros</a> 
     </div>
   </div> 
+  </div>
 
-  <div class="row pt-4">
+
+  <div class="container-fluid">
+  <div class="row pt-4 pl-5 pr-5">
 
     <table class="table table-striped table-hover">
   <thead class="bg-success">
@@ -67,8 +70,9 @@ error_reporting(0);
       <th class="text-center text-light">E-mail</th>
       <th class="text-center text-light">Data Envio</th>
       <th class="text-center text-light">Curso</th>
+      <th class="text-center text-light">Disciplina</th>
+      <th class="text-center text-light">Turno</th>
       <th class="text-center text-light">Quantidade</th>
-      <th class="text-center text-light">Opção</th>
       <th class="text-center text-light">Arquivo</th>
       <th></th>
     </tr>
@@ -88,12 +92,14 @@ if(mysql_num_rows($resultado) > 0){
 	$telefone = $linha["telefone"];
 	$proposito = $linha["proposito"];
 	$cursos = $linha["cursos"];
-	$opcaoimpressao = $linha["opcaoimpressao"];
+	$disciplina = $linha["disciplina"];
 	$qtdecopias  = $linha["qtdecopias"];
 	$patharq  = $linha["patharq"];
 	$rastreio  = $linha["rastreio"];
 	$data_envio  = $linha["data_envio"];
-	$status  = $linha["status"];
+  $status  = $linha["status"];
+  $turno  = $linha["turno"];
+  $dia_semana  = $linha["dia_semana"];
 
 	if($_SESSION["nivel"] == 1){
    
@@ -107,8 +113,9 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'>$data_envio</td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno/td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
         <td class='ls-txt-right ls-regroup'><a href='#'></a>
         </td>
@@ -130,10 +137,11 @@ echo "
         <td class='ls-txt-center'>$email</td>
         <td class='ls-txt-center'>$data_envio</td>
         <td class='ls-txt-center'>$cursos</td>
+        <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$qtdecopias</td>
-        <td class='ls-txt-center'>$opcaoimpressao</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
-        <td class='ls-txt-right ls-regroup'><a href='processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&opcaoimpressao=$opcaoimpressao&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status' class='ls-btn ls-btn-sm'>Processar</a>
+        <td class='ls-txt-right ls-btn-sm  ls-regroup'><a href='../processamento/processar.php?nome=$nome&email=$email&telefone=$telefone&proposito=$proposito&cursos=$cursos&disciplina=$disciplina&qtdecopias=$qtdecopias&patharq=$patharq&rastreio=$rastreio&data_envio=$data_envio&status=$status&dia_semana=$dia_semana&turno=$turno class='ls-btn ls-btn-sm'>Processar</a>
         </td>
       </tr>
   </tbody>";

@@ -67,6 +67,7 @@ include_once("../lib/conexao_banco.php");
       <th class="text-center text-light text-primary">Data envio</th>
       <th class="text-center text-light text-primary">Curso</th>
       <th class="text-center text-light text-primary">Disciplina</th>
+      <th class="text-center text-light text-primary">Turno</th>
       <th class="text-center text-light text-primary">Dia da semana </th>
       <th class="text-center text-light text-primary">Quantidade</th>
       <th class="text-center text-light text-primary">Arquivo</th>
@@ -96,6 +97,7 @@ $qtdecopias  = $linha["qtdecopias"];
 $patharq  = $linha["patharq"];
 $rastreio  = $linha["rastreio"];
 $data_envio  = $linha["data_envio"];
+$turno = $linha["turno"];
 $status  = $linha["status"];
 $dia_semana = $linha["dia_semana"];
 
@@ -122,6 +124,7 @@ echo "
         <td class='ls-txt-center'><a href='#' $cor> $data1</a></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
@@ -143,6 +146,7 @@ echo "
         <td class='ls-txt-center'><a href='#' $cor>  $data1 </a></td></td>
         <td class='ls-txt-center'>$cursos</td>
         <td class='ls-txt-center'>$disciplina</td>
+        <td class='ls-txt-center'>$turno</td>
         <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
