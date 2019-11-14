@@ -39,7 +39,7 @@
 	<div class="container pt-5">
 		
 		<div class="row">
-			<div class="col-12">
+			<div class="col-sm-12">
 				<div style="background: #efe7e7;" data-ls-module="collapse" data-target="#0" class="ls-collapse ">
 					<a href="#" style="text-decoration:none" class="ls-collapse-header">
 					<h1 class="ls-collapse-title "> <span class="ls-text-primary" style="font-size: 14pt; color: #f15c2f;" >
@@ -61,8 +61,8 @@
 		</div>
 
 		<div class="row pt-5">
-			<div class="col-1"></div>
-			<div class="col-10">
+			<div class="col-sm-1"></div>
+			<div class="col-sm-10">
 
 			<form action="save.php" method="post" enctype="multipart/form-data" class="ls-form ls-form-horizontal row">
 
@@ -79,7 +79,7 @@
 
 			<input style="background: #efe7e7;" type="hidden" name="telefone" readonly value="<?= $telUpload ?>" required >
 			</div>
-			<div class="col-1"></div>
+			<div class="col-sm-1"></div>
 		</div>
 
 		<hr>
@@ -90,28 +90,28 @@
 		</div>
 
 		<div class="row">  <!-- Linha 1 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Administracao">
 					Administração
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Eng. eletrica">
 					Eng. Elétrica
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Eng. Mecanica">
 					Eng. Mecânica
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Redes">
 					Redes Comp.
@@ -120,28 +120,28 @@
 		</div>
 
 		<div class="row"> <!-- Linha 2 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Arquitetura">
 					Arquitetura e Urbanismo
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Contabeis">
 					Ciências Contábeis
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EngCivil">
 					Engenharia Civil
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EngProducao">
 					Engenharia de Produção
@@ -150,28 +150,28 @@
 		</div>
 
 		<div class="row"> <!-- Linha 3 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Enfermagem">
 					Enfermagem
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Fisioterapia">
 					Fisioterapia
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="EduFisica">
 					Educação Física
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoComercial">
 					Gestão Comercial
@@ -180,28 +180,28 @@
 		</div>
 
 		<div class="row"> <!-- Linha 4 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoRH">
 					Gestão de RH
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoFinanceira">
 					Gestão Financeira
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Logística">
 					Logística
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="GestaoMarketing">
 					Gestão em Marketing
@@ -210,28 +210,28 @@
 		</div>
 
 		<div class="row"> <!-- Linha 5 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="ConstrucaoEdificios">
 					Construção de Edifícios
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="SistemasInformacao">
 					Sistemas de Informação
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="Mecatronica Industrial">
 					Mecatrônica
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="ProducaoIndustrial">
 					G. da Produção Industrial
@@ -240,24 +240,24 @@
 		</div>
 
 		<div class="row"> <!-- Linha 5 -->
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="SegurancaTrabalho">
 					Segurança no Trabalho
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 				<label class="ls-label-text text-primary">
 					<input type="checkbox" name="curso[]" value="PosGraduacao">
 					Pós Graduação
 				</label>
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 			</div>
 
-			<div class="col-3">
+			<div class="col-sm-3">
 			</div>
 		</div>
 
@@ -265,7 +265,7 @@
 <br>
 
 <div class="row pt-5">
-	<label class="ls-label col-4">
+	<label class="ls-label col-sm-4">
 		<b class="ls-label-text">Preencha o nome da disciplina do curso:</b>
 		<p class="text-info"> * Limite máximo de 1 arquivo por disciplina.</p>
 		<input class="form-control" type="text" name="disciplina" placeholder="Informe a disciplina" required >
@@ -273,7 +273,7 @@
 </div>
 
 <div class="row pt-5">
-	<label class="ls-label col-4">
+	<label class="ls-label col-sm-4">
 		<b class="ls-label-text">Preencha o código dos cursos selecionados:</b>
 		<input class="form-control" type="text" name="codturmas" placeholder="Código do(s) curso(s)" required >
 	</label>
@@ -281,8 +281,8 @@
 
 <br>
 <div class="row">
-	<div class="ls-label col-8">
-	<label class="ls-label col-6">
+	<div class="ls-label col-sm-8">
+	<label class="ls-label col-sm-6">
 			<b class="ls-label-text"> Dia da Semana </b>
 				<p class="text-info"> * Informe o dia da semana que você vai aplicar a prova.</p>
 			<div class="ls-custom-select">
@@ -314,8 +314,8 @@
 
 <br>
 <div class="row">
-	<div class="col-8">
-		<label class="ls-label col-12">
+	<div class="col-sm-8">
+		<label class="ls-label col-sm-12">
 			<b class="ls-label-text">Propósito</b>
 			<div class="ls-custom-select">
 				<select name="proposito" class="form-control">
@@ -334,7 +334,7 @@
 
 <br>
 <div class="row">
-	<label class="ls-label col-6">
+	<label class="ls-label col-sm-6">
 		<b class="ls-label-text">Qtde. cópias de cada arquivo</b>
 		<input class="form-control" type="text" name="qtdecopias" placeholder="Número de cópias" required >
 	</label>
@@ -342,7 +342,7 @@
 
 <br>
 <div class="row">
-	<label class="ls-label col-10">
+	<label class="ls-label col-sm-10">
 		<div class="ls-prefix-group">
 			<span class="ls-label-text-prefix">Arquivo:</span>
 			<input  id="input-b1" name="arquivo[]" type="file" accept="application/pdf" class="file" multiple>
@@ -352,14 +352,14 @@
 <br>
 
 <div class="row pt-5">
-	<div class="col-4"></div>
-	<div class="col-2">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-2">
 		<button class="btn btn-success col-12">Salvar</button>
 	</div>
-	<div class="col-2">
+	<div class="col-sm-2">
 		<button class="ls-btn-danger col-12">Limpar</button>
 	</div>
-	<div class="col-4"></div>
+	<div class="col-sm-4"></div>
 </div>
 </form>
 

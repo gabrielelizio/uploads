@@ -26,10 +26,16 @@
 </head>
 <body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index container-fluid">
   
+<div id="fundo-externo"></div>
+    <div id="fundo">
+        <img class="img-responsive " src="../images/bg_login.jpg" alt="" />
+    </div>
+</div>
+
 <div id="card-form" class="container">
   <div class="row">
-    <div class="col-4 m-sm-1"></div>
-    <div class="col-4 sm-10">
+    <div class="col-sm-4 col-md-4"></div>
+    <div class="col-sm-4 col-md-4">
       <div  class="card border border-1 ">
         <img src="images/logo_login.png" class="card-img-top">
           <div class="card-body">
@@ -56,13 +62,13 @@
 
                   </form>
                 </div>
-                <div class="col-1"> </div>
+                
                 </div>
             </div>
           </div>
         </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
 

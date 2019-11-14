@@ -63,20 +63,20 @@ $turno  = htmlspecialchars($_REQUEST['turno']);
 <div class="container">
 
 <div class="row  pt-5">
-  <div class="col-2"></div>
-  <div class="col-8">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
     <div class="ls-alert-danger ls-dismissable">
     <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
       <strong>Motivo do erro:</strong> <?php echo $observacao;?> </div>
   </div>
-  <div class="col-2"></div>
+  <div class="col-sm-2"></div>
 </div>
  
 <div class="pt-5"></div>
 <div style="background-color: #f2f3ed;" class="row pt-5 border border-dark">
 
-<div class="col-2"></div>
-<div class="col-8 align-items-center">
+<div class="col-sm-2"></div>
+<div class="col-sm-8 align-items-center">
 
   <form action="gravaprocesamento.php" method="post" class="ls-form row" data-ls-module="form">
       <label class="ls-label col-md-6 col-lg-8">
@@ -161,15 +161,15 @@ $turno  = htmlspecialchars($_REQUEST['turno']);
   </form>
 </div>
 
-<div class="col-2"></div>
+<div class="col-sm-2"></div>
 </div>  <!-- fecha div row -->
 
 <div class="row pt-5" style="height:250px;">
-  <div class="col-5"></div>
-  <div class="col-5">
+  <div class="col-sm-5"></div>
+  <div class="col-sm-5">
   <a href="index.php" class="btn btn-danger btn-lg ls-ico-shaft-left pr-5 pl-5">Voltar</a>
   </div>
-  <div class="col-2"></div>
+  <div class="col-sm-2"></div>
 </div>
 </div>
 

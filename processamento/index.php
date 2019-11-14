@@ -42,7 +42,7 @@ include_once("../lib/conexao_banco.php");
 	
   
   <div class="row">
-      <div class="col-6">
+      <div class="col-sm-6">
         <form  action="busca-registro.php" class="form-row">
         <label style="width: 70%;" class="ls-label" role="search">
           <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">

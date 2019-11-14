@@ -44,7 +44,7 @@ error_reporting(0);
 
 <div class="container pt-5">
   <div class="row pt-5">
-    <div class="col-7">
+    <div class="col-sm-7">
     <form  action="busca-registro_processada.php" class="form-row">
     <label style="width: 70%;" class="ls-label" role="search">
       <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de rastreio"
@@ -55,7 +55,7 @@ error_reporting(0);
     </div>
 </form>
     </div>
-    <div class="col-4">
+    <div class="col-sm-4">
     <a style="margin-top: -5px" class="voltar btn btn-danger ls-float-left-xs" href="index.php"> Voltar a lista de registros</a>
     </div>
   </div>

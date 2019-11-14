@@ -50,8 +50,8 @@ $status  = htmlspecialchars($_REQUEST['status']);
 
       <div class="container"> 
       <div class="row pt-5">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
         <div class="ls-alert-warning ls-dismissable">
           <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
           <strong>Atenção:</strong> Clique no botão Validar quando o processo de impressão for concluído.
@@ -60,8 +60,8 @@ $status  = htmlspecialchars($_REQUEST['status']);
       </div>
 
   <div style="background-color: #f2f3ed;"  class="container row border border-dark pt-5">
-    <div class="col-3"></div>
-    <div class="col-8">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-8">
     
   <form action="gravaprocesamento.php" method="post" class="ls-form row" data-ls-module="form">
     

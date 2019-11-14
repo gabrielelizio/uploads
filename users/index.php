@@ -44,11 +44,11 @@ include_once ("../variables_global.php");
 
 <div class="conatainer pt-5">
   <div class="row">
-    <div class="col-3"></div>
+    <div class="col-sm-3"></div>
 
 
-    <div class="ls-tabs-btn col-6">
-    <ul class="ls-tabs-btn-nav">
+    <div class="ls-tabs-btn col-6 pt-5">
+    <ul class="ls-tabs-btn-nav pt-5">
     <li class="col-md-3 col-xs-6">
       <a href="#" onclick="mostrar_abas(this);" id="mostra_aba1"class="ls-btn" data-ls-module="button" >
         <span class="ls-ico-user-add"> ADD Usuário</a></li>
@@ -72,8 +72,8 @@ include_once ("../variables_global.php");
         <?php if(isset($_GET['sucesso'])){ ?>
 
 <div class="row">
-<div class="col-3"></div>
-<div class="col-6">
+<div class="col-sm-3"></div>
+<div class="col-sm-6">
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
 Usuário cadastrado com sucesso!
@@ -83,7 +83,7 @@ Usuário cadastrado com sucesso!
 </div>
 
 </div>
-<div class="col-3"></div>
+<div class="col-sm-3"></div>
 </div>
 
 <?php  }  ?>
@@ -93,8 +93,8 @@ Usuário cadastrado com sucesso!
 <?php if(isset($_GET['sucesso2'])){ ?>
 
 <div class="row">
-<div class="col-3"></div>
-<div class="col-4 ">
+<div class="col-sm-3"></div>
+<div class="col-sm-4 ">
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
 Usuário excluído com sucesso !!
@@ -111,13 +111,13 @@ Usuário excluído com sucesso !!
 
  <!-- formulario de cadastro d eusuarios -->
         <div class=" row pt-5 ">
-          <div class="col-3"></div>
-            <div class=" hiden col-6 pt-5 border border-secondary" id="box1">
+          <div class="col-sm-3"></div>
+            <div class=" hiden col-sm-6 pt-5 border border-secondary" id="box1">
             <table>
             <form action="save.php" method="post"> 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Primeiro nome: </label>
                     <input type="text" class="form-control border-primary" id="firstName"
                     placeholder="" autocomplete="off" required name="firstname">
@@ -125,8 +125,8 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Sobrenome: </label>
                     <input type="text" class="form-control border-primary" id="lastName"
                     placeholder="" autocomplete="off" required name="lastname">
@@ -134,8 +134,8 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-4">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-4">
                     <label class="text-success"> CPF: </label>
                     <input type="text" class="form-control border-primary" id="cpf"
                     placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" name="cpf"
@@ -144,8 +144,8 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Telefone: </label>
                     <input type="text" class="form-control border-primary" id="phone" name="phone"
                     placeholder="Apenas numeros com DDD.: ex: 3133333333" autocomplete="off" required>
@@ -153,8 +153,8 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Email: </label>
                     <input type="text" class="form-control border-primary" id="email" name="email"
                     placeholder="" autocomplete="off" required>
@@ -162,8 +162,8 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row">
-                  <div class="col-2"></div>
-                  <div class="form-group col-6">
+                  <div class="col-sm-2"></div>
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Senha: </label>
                     <div class="ls-prefix-group ls-field-lg">
                       <input id="password_field" name="password" class="ls-login-bg-password form-control border-primary"
@@ -174,7 +174,7 @@ Usuário excluído com sucesso !!
 
                   <div class="row">
 
-                  <div class="form-group col-6">
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> Função: </label>
                     <div>
                     <select id="inputState" name="funcao" class="form-control border-primary ">
@@ -186,26 +186,26 @@ Usuário excluído com sucesso !!
                 </div>
 
                 <div class="row pt-3">
-                  <div class="col-2"></div>
-                  <div class="col-5 pt-5">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-5 pt-5">
                   <input type="submit" value="Salvar" class="ls-btn ls-btn-primary pr-5 pl-5">
                   </div>
-                  <div class="col-4 pt-5">
+                  <div class="col-sm-4 pt-5">
                   <input type="reset" value="Cancelar" class="ls-btn ls-btn-secondary pr-5 pl-5">
                   </div>
                   <div class="pt-5 pb-5"></div>
               </form>
             </table>
               </div>
-          <div class="col-2"></div>
+          <div class="col-sm-2"></div>
         </div> <!-- fim div clas row -->
 
 
 
   <!-- lista de users -->
   <div class="row">
-    <div class="col-1"></div>
-  <div class="hiden col-10" id="box2" >
+    <div class="col-sm-1"></div>
+  <div class="hiden col-sm-10" id="box2" >
 
    <Ul> <li> <h2 class="text-success pb-5"> Usuários Cadastrados</h2> </li> </Ul>
    <div style="overflow: auto; height: 640px">
@@ -259,14 +259,14 @@ echo "
 </ul>
 </div>
 </div>
-<div class="col-1"></div>
+<div class="col-sm-1"></div>
 </div> <!-- fim da row -->
 
 
             <!-- Excluir users -->
 <div class="row">
-  <div class="col-3"></div>
-  <div  class="hiden col-6" id="box3" >
+  <div class="col-sm-3"></div>
+  <div  class="hiden col-sm-6" id="box3" >
   <div style="overflow: auto; height: 500px">
       <table  class="table table-borderless table-hover ">
       <thead class="bg-secondary">
@@ -313,7 +313,7 @@ echo "
       </table>
   </div>
 </div>
-<div class="col-3"></div>
+<div class="col-sm-3"></div>
 </div>
 
     </div>  <!-- fim div container-->

@@ -22,31 +22,35 @@ exit;
     <link href="stylesheets/locastyle.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="images/ico-boilerplate.png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" href="css/all.min.css">
   </head>
   <body>
     <div class="ls-topbar ">
 
-<?php  include_once("notification_bars.php"); ?>
-
-  <span class="ls-show-sidebar ls-ico-menu"></span>
-
-  <!-- Nome do produto/marca com sidebar -->
-    <h1 class="ls-brand-name">
-      <a href="#"" class="ls-ico-earth">
-        <small>Uploads</small>
-        Provas
-      </a>
-    </h1>
-
-  <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
+<!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
 </div>
 
-<aside class="ls-sidebar">
+<div class="collapse navbar-collapse" id="navegacao">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active"></li>
 
-  <div class="ls-sidebar-inner">
-      <a href="#"  class="ls-go-prev"><span class="ls-text">Voltar à lista de serviços</span></a>
 
 <?php include("menu-sicp.php");  ?>
+
+
+  </div>
+</aside>
+
+
+    <main class="ls-main ">
+      <div class="container-fluid">
+        <h1 class="ls-title-intro ls-ico-home">Página inicial</h1>
+      </div>
+    </main>
+  <?php include_once("notification_message.php"); ?>
+
+
 
 
   </div>
@@ -65,5 +69,6 @@ exit;
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/locastyle.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.bundle.min.js"></script>
   </body>
 </html>

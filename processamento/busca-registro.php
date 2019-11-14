@@ -41,8 +41,8 @@ error_reporting(0);
 	</div>
   <div class="pt-5"></div>
   <div class="row container pt-5">
-    <div class="col-2"></div>
-    <div class="col-7">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-7">
     <form  action="busca-registro.php" class="form-row">
     <label style="width: 70%;" class="" role="search">
       <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca pelo Cod. de 
@@ -53,7 +53,7 @@ error_reporting(0);
       </div>
 </form>
     </div>
-    <div class="col-3"> 
+    <div class="col-sm-3"> 
     <a class="voltar btn btn-danger btn-group-lg ls-float-left" href="index.php">Voltar a lista de registros</a> <br>
     </div>
     

@@ -1,8 +1,8 @@
-<nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
+<nav style="background-color: #f15c2f;" class="navbar navbar-collapse navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#menu" >
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacao" aria-controls="navegacao" aria-expanded="false" aria-label="toggle navigation"">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
     <!-- Linkss -->
     <div id="menu" class="collapse navbar-collapse container">
