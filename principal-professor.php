@@ -46,14 +46,7 @@ exit;
 </aside>
 
 
-    <main class="ls-main ">
-      <div class="container-fluid">
-        <h1 class="ls-title-intro ls-ico-home">Página inicial</h1>
-      </div>
-    </main>
-  <?php include_once("notification_message.php"); ?>
-
-
+  
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/locastyle.js"></script>

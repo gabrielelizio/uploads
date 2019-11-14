@@ -18,4 +18,5 @@ $vg_title_small="Upload";
 $nomeUpload = $nomeUser = $dados["firstname"]. " ". $dados["lastname"];
 $emailUpload = $nomeUser = $dados["email"];
 $telUpload = $nomeUser = $dados["phone"];
+$idUpload = $nomeUser = $dados["id"];
 ?>

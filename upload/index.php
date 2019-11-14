@@ -66,15 +66,17 @@
 
 			<form action="save.php" method="post" enctype="multipart/form-data" class="ls-form ls-form-horizontal row">
 
-			<label class="ls-label col-6 ">
+			<label class="ls-label">
 				<b class="ls-label-text">Nome</b>
 				<p class="ls-label-info"></p>
-				<input style="background: #efe7e7;" type="text" name="nome" readonly value="<?= $nomeUpload ?>" required >
+				<input class="col-sm-8" style="background: #efe7e7;" type="text" name="nome" readonly value="<?= $nomeUpload ?>" required >
+				<a href="alterar_usuario.php" class="ls-tooltip-right ls-btn"  aria-label="Editar usuário"><i class="ls-ico-pencil"></i> </a>
 			</label>
-			<label class="ls-label col-6 ">
+			
+			<label class="ls-label  ">
 				<b class="ls-label-text">E-mail</b>
 				<p class="ls-label-info"></p>
-				<input style="background: #efe7e7;" type="text" name="email" readonly value="<?= $emailUpload ?>" required >
+				<input class="col-sm-8" style="background: #efe7e7;" type="text" name="email" readonly value="<?= $emailUpload ?>" required >
 			</label>
 
 			<input style="background: #efe7e7;" type="hidden" name="telefone" readonly value="<?= $telUpload ?>" required >

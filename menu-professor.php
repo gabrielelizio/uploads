@@ -34,14 +34,50 @@
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt; padding-botto:20px;">  Sair   </a>
 
         <div style="background-color: black;" class="dropdown-menu text-center">
+        <a href="#" data-toggle="modal" data-target="#editPassword"> <span class="text-left text-light"> Alterar Senha </span>   </a>
         <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
         </div>
         </li>
 
 
         </ul>
-			</div>
+	</div>
     </nav>  
+  
+<!-- Modal -->
+<div class="modal fade" id="editPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: #f15c2f;" class="modal-title" id="exampleModalLabel">Alterar Senha </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="#" class="ls-form" method="post">
+      <div style="background: #efe7e7;" class="modal-body">
+      <label class="ls-label">
+            <b class="ls-label-text">Senha Antiga *</b>
+            <input class="border border-success" type="password" name="senha_antiga" required placeholder="Digite sua senha atual" />
+          </label>
+          <label class="ls-label">
+            <b class="ls-label-text"> Nova Senha *</b>
+            <input class="border border-success" type="password" name="new_password" required placeholder="Digite a nova senha" />
+          </label>
+          <label class="ls-label">
+            <b class="ls-label-text"> Confirmação de senha *</b>
+            <input class="border border-success" type="password" name="confirmar_senha" required placeholder="Confirmar nova senha" />
+          </label>
+
+      </div>
+      <div style="background: #efe7e7;" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
+        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="enviar" value="salvar">
+        
+      </div>
+    </div>
+  </div>
+</div>
 
 
     
