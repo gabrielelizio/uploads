@@ -11,25 +11,25 @@
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php">
             <h6> Processamento</h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php">
             <h6> Realizados </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php">
             <h6> Erros </h6> </a>
         </li>
-        
+
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/users/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/users/index.php">
             <h6> Usuários </h6> </a>
         </li>
-                    
+
 					<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
@@ -39,7 +39,7 @@
           <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
           </div>
           </li>
-          
+
           </ul>
 			</div>
     </nav>

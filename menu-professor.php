@@ -9,25 +9,25 @@
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php">
             <h6> #Dashboard </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php">
             <h6> Processando </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php">
             <h6> Realizados </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php">
             <h6> Erros </h6> </a>
         </li>
-        
+
 
 			<li class="nav-item active dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
@@ -45,10 +45,4 @@
     </nav>  
   
 
-    
-<!-- <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php" class="ls-ico-upload" title="">Uploads</a></li>
-  <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php" class="ls-ico-spinner" title="Agentes">Processando</a></li>
-  <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php" class="ls-ico-checkmark-circle" title="Agentes">Realizados</a></li>
-  <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php" class="ls-ico-close" title="Agentes">Erros</a></li>
-    
--->
+    </nav>
