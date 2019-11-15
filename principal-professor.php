@@ -34,10 +34,6 @@ exit;
   <!-- Nome do produto/marca sem sidebar quando for o pre-painel  -->
 </div>
 
-<div class="collapse navbar-collapse" id="navegacao">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"></li>
-
 
 <?php include("menu-professor.php");  ?>
 

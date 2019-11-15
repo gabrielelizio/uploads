@@ -1,13 +1,13 @@
 <nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacao" 
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao" 
         aria-controls="navegacao" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
 
 
       <!-- Linkss -->
-      <div id="menu" class="collapse navbar-collapse container">
+      <div id="navegacao" class="collapse navbar-collapse ">
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
@@ -35,7 +35,7 @@
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
 
           <div style="background-color: black;" class="dropdown-menu text-center">
-          <a href="#" data-toggle="modal" data-target="#editPassword"> <span class="text-left text-light"> Alterar Senha </span></a>
+          
           <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
           </div>
           </li>

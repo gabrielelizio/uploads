@@ -43,15 +43,18 @@ include_once("../lib/conexao_banco.php");
   
   <div class="row">
       <div class="col-sm-6">
-        <form  action="busca-registro.php" class="form-row">
-        <label style="width: 70%;" class="ls-label" role="search">
-          <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
-        </label>
-    <div class="btn">
-      <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success btn-sm" title="Buscar">
-    </div>
-</form>
+        <form  action="busca-registro.php" class="">
+        
+          <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..." 
+          placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
+          
       </div>
+      <div class="col-sm-6">
+      <input  type="submit" value="Buscar" class="float-left btn btn-outline-success btn-sm btn-large" title="Buscar">
+      </div>
+      
+</form>
+      
   </div>
   </div>
 <hr>

@@ -70,7 +70,7 @@
 				<b class="ls-label-text">Nome</b>
 				<p class="ls-label-info"></p>
 				<input class="col-sm-8" style="background: #efe7e7;" type="text" name="nome" readonly value="<?= $nomeUpload ?>" required >
-				<a href="alterar_usuario.php" class="ls-tooltip-right ls-btn"  aria-label="Editar usuário"><i class="ls-ico-pencil"></i> </a>
+				<a href="alterar_usuario.php" class="ls-tooltip-right btn btn-info btn-sm"  aria-label="Editar usuário"><i class="ls-ico-pencil"></i> </a>
 			</label>
 			
 			<label class="ls-label  ">

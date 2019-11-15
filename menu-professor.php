@@ -1,11 +1,11 @@
 <nav style="background-color: #f15c2f;" class="navbar navbar-collapse navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacao" aria-controls="navegacao" aria-expanded="false" aria-label="toggle navigation"">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="toggle navigation"">
     <span class="navbar-toggler-icon"></span>
   </button>
 
     <!-- Linkss -->
-    <div id="menu" class="collapse navbar-collapse container">
+    <div id="menu" class="collapse navbar-collapse ">
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
@@ -34,7 +34,7 @@
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt; padding-botto:20px;">  Sair   </a>
 
         <div style="background-color: black;" class="dropdown-menu text-center">
-        <a href="#" data-toggle="modal" data-target="#editPassword"> <span class="text-left text-light"> Alterar Senha </span>   </a>
+        
         <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
         </div>
         </li>
@@ -54,7 +54,7 @@
         <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="#" class="ls-form" method="post">
+      <form action="alterar_senha.php" class="ls-form" method="post">
       <div style="background: #efe7e7;" class="modal-body">
       <label class="ls-label">
             <b class="ls-label-text">Senha Antiga *</b>
@@ -72,7 +72,7 @@
       </div>
       <div style="background: #efe7e7;" class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
-        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="enviar" value="salvar">
+        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="salvar" value="salvar">
         
       </div>
     </div>

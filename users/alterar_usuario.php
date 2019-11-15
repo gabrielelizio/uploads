@@ -32,15 +32,15 @@
 		}
 	?>
 
-	<div class="pt-2"></div>
-	<div class=" container-fluid pt-5">
+
+	<div class=" container-fluid pt-5 ">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center "> Editar perfil </h1>
   </div>
-  
+
  <div class="row container">
    <div class="col-sm-4"></div>
    <div class="col-sm-4 pt-5">
-   <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editPassword"> <span class="text-left"> Alterar Senha </span>   </a>
+   <a href="#" class="btn btn-info" data-toggle="modal" data-target="#alterar"> <span class="text-left"> Alterar Senha </span>   </a>
    </div>
  <div class="col-sm-4"></div>
  </div> 
@@ -134,8 +134,8 @@ $email = $linha["email"];
         <div class="pt-5 pb-5"></div>
 
 
-        <!-- Modal -->
-<div class="modal fade" id="editPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="alterar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

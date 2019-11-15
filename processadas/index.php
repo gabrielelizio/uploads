@@ -43,17 +43,14 @@ include_once("../lib/conexao_banco.php");
 	<div class="container pt-5">
 
   <div class="row pt-5">
-    <div class="col-sm-7">
+    <div class="col-sm-4">
 
     <form  action="busca-registro_processada.php" class="form-row">
-      <label style="width: 70%;" class="ls-label" role="search">
+      
         <input style="width: 100%" type="text" name="rastreio" aria-label="Faça sua busca..."
           placeholder="Faça sua busca..." required="" autocomplete="off" class="form-control">
-			</label>
 
-      <div class="btn">
-        <input style="margin-top: -13px;" type="submit" value="Buscar" class="btn btn-outline-success" title="Buscar">
-			</div>
+
 			<?php if(isset($_GET['sucesso'])){ ?>    <!-- sucesso ao excluir os dados de uploads-->
                   <br>
                     <div class="ls-alert-success ls-dismissable ">
@@ -67,10 +64,14 @@ include_once("../lib/conexao_banco.php");
                   <span data-ls-module="dismiss" class="ls-dismiss">&times;</span>
                  Você não possui registros com status Impresso para excluir.  </div>
 						<?php } ?>
+            </div>
+            <div class="col-sm-2">
+    <input  type="submit" value="Buscar" class="float-left btn btn-sm btn-outline-success" title="Buscar">
+    </div>
 
 </form>
-    </div>
-    <div class="col-sm-2"></div>
+    
+    
     <div class="col-sm-3">
         <a class="btn btn-secondary float-right text-light" data-toggle="modal" data-target="#exampleModalCenter">
           <i class="ls-ico-remove ls-text-xl"></i> Limpar Registros</a>
@@ -116,7 +117,7 @@ include_once("../lib/conexao_banco.php");
 </div>
 
 <hr>
-<div class="container-fluid">
+<div class="container-fluid col-sm-offset-12">
 <div class="row pt-2 pr-5 pl-5">
 <table class="table table-striped table-hover table-responsive-lg">
   <thead class="bg-success">

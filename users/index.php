@@ -42,13 +42,13 @@ include_once ("../variables_global.php");
 	<h1 class="ls-title-intro ls-ico-user pl-5 text-center"> Usuários </h1>
 </div>
 
-<div class="conatainer pt-5">
-  <div class="row">
+
+  <div class="row pt-5">
     <div class="col-sm-3"></div>
 
 
-    <div class="ls-tabs-btn col-6 pt-5">
-    <ul class="ls-tabs-btn-nav pt-5">
+    <div class="ls-tabs-btn col-6 ">
+    <ul class="ls-tabs-btn-nav ">
     <li class="col-md-3 col-xs-6">
       <a href="#" onclick="mostrar_abas(this);" id="mostra_aba1"class="ls-btn" data-ls-module="button" >
         <span class="ls-ico-user-add"> ADD Usuário</a></li>
@@ -60,6 +60,10 @@ include_once ("../variables_global.php");
     <li class="col-md-2 col-xs-6">
       <a href="#" onclick="mostrar_abas(this);" id="mostra_aba3" class="ls-btn" data-ls-module="button">
       <span class="ls-ico-remove"></span></a></li>
+
+      <li class="col-md-2 col-xs-6">
+      <a href="alterar_usuario.php"  class="ls-tooltip-right ls-btn" aria-label="Editar usuário" >
+      <span class="ls-ico-pencil"></span></a></li>
   </ul>
 
     </div>
@@ -135,10 +139,10 @@ Usuário excluído com sucesso !!
 
                 <div class="row">
                   <div class="col-sm-2"></div>
-                  <div class="form-group col-sm-4">
+                  <div class="form-group col-sm-6">
                     <label class="text-success"> CPF: </label>
                     <input type="text" class="form-control border-primary" id="cpf"
-                    placeholder="Digite o numero do seu cpf. ex: 111.111.111.11" autocomplete="off" name="cpf"
+                    placeholder="Digite o numero do seu cpf. ex: 111.111.111-11" autocomplete="off" name="cpf"
                     required="required" pattern="[0-9]+$">
                   </div>
                 </div>
@@ -157,7 +161,7 @@ Usuário excluído com sucesso !!
                   <div class="form-group col-sm-6">
                     <label class="text-success"> Email: </label>
                     <input type="text" class="form-control border-primary" id="email" name="email"
-                    placeholder="" autocomplete="off" required>
+                    placeholder="email" autocomplete="off" required>
                   </div>
                 </div>
 
@@ -167,7 +171,7 @@ Usuário excluído com sucesso !!
                     <label class="text-success"> Senha: </label>
                     <div class="ls-prefix-group ls-field-lg">
                       <input id="password_field" name="password" class="ls-login-bg-password form-control border-primary"
-                      name="password" type="password" placeholder="Sua Senha" required>
+                      name="password" type="password" placeholder=" Senha" required>
                       <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye"
                       data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
                     </div> <br>
@@ -362,3 +366,7 @@ function mostrar_abas(obj) {
 </script>
 
 </html>
+
+<script type="text/javascript" src="../javascripts/jquery.js"></script>
+			<script type="text/javascript" src="../javascripts/locastyle.js"></script>
+			<script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
