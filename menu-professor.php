@@ -9,25 +9,25 @@
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php">
             <h6> #Dashboard </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php">
             <h6> Processando </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php">
             <h6> Realizados </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php">
             <h6> Erros </h6> </a>
         </li>
-        
+
 
 			<li class="nav-item active dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
@@ -42,8 +42,8 @@
 
         </ul>
 	</div>
-    </nav>  
-  
+    </nav>
+
 <!-- Modal -->
 <div class="modal fade" id="editPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -54,7 +54,7 @@
         <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="#" class="ls-form" method="post">
+      <form action="alterasenha.php" class="ls-form" method="post">
       <div style="background: #efe7e7;" class="modal-body">
       <label class="ls-label">
             <b class="ls-label-text">Senha Antiga *</b>
@@ -73,17 +73,18 @@
       <div style="background: #efe7e7;" class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
         <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="enviar" value="salvar">
-        
-      </div>
+
+			</div>
+      </form>
     </div>
   </div>
 </div>
 
 
-    
+
 <!-- <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php" class="ls-ico-upload" title="">Uploads</a></li>
   <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php" class="ls-ico-spinner" title="Agentes">Processando</a></li>
   <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php" class="ls-ico-checkmark-circle" title="Agentes">Realizados</a></li>
   <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php" class="ls-ico-close" title="Agentes">Erros</a></li>
-    
+
 -->
