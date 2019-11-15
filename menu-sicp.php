@@ -1,6 +1,10 @@
 <nav style="background-color: #f15c2f;" class="navbar navbar-expand-lg fixed-top navbar-dark conatiner">
         <a href="#" class="navbar-brand"> <img src="../images/header_logo.png"> Upload de Arquivos </a>
+<<<<<<< HEAD
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao" 
+=======
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navegacao"
+>>>>>>> ea938f827f566a5018410fad0f4411937310e795
         aria-controls="navegacao" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,25 +15,25 @@
         <ul class="navbar-nav ml-md-auto">
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php">
             <h6> Processamento</h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php">
             <h6> Realizados </h6> </a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php">
             <h6> Erros </h6> </a>
         </li>
-        
+
         <li class="nav-item active">
-            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/users/index.php"> 
+            <a class="nav-link" href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/uploads/users/index.php">
             <h6> Usuários </h6> </a>
         </li>
-                    
+
 					<li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
@@ -39,7 +43,7 @@
           <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
           </div>
           </li>
-          
+
           </ul>
 			</div>
     </nav>
@@ -54,33 +58,34 @@
         <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="#" class="ls-form" method="post">
+      <form action="alterasenha.php" class="ls-form" method="post">
       <div style="background: #efe7e7;" class="modal-body">
       <label class="ls-label">
-            <b class="ls-label-text">Senha Antiga *</b>
-            <input class="border border-success" type="password" name="senha_antiga" required placeholder="Digite sua senha atual" />
+            <b class="ls-label-text">Senha Atual *</b>
+            <input class="border border-success" type="password" name="senha_atual" required placeholder="Digite sua senha atual" />
           </label>
           <label class="ls-label">
             <b class="ls-label-text"> Nova Senha *</b>
-            <input class="border border-success" type="password" name="new_password" required placeholder="Digite a nova senha" />
+            <input class="border border-success" type="password" name="senha_nova" required placeholder="Digite a nova senha" />
           </label>
           <label class="ls-label">
             <b class="ls-label-text"> Confirmação de senha *</b>
-            <input  class="border border-success" type="password" name="confirmar_senha" required placeholder="Confirmar nova senha" />
+            <input  class="border border-success" type="password" name="confirme_senha" required placeholder="Confirmar nova senha" />
           </label>
 
       </div>
       <div style="background: #efe7e7;" class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
-        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="enviar" value="salvar">
-        
-      </div>
+        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="enviar" value="Salvar">
+
+			</div>
+			</form>
     </div>
   </div>
 </div>
 
-<!-- excluir depois 
-          
+<!-- excluir depois
+
            <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processamento/index.php" class="ls-ico-spinner" title="Agentes">Processamento</a></li>
            <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/processadas/index.php" class="ls-ico-checkmark-circle" title="Agentes">Realizados</a></li>
            <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/error/index.php" class="ls-ico-close" title="Agentes">Erros</a></li>
