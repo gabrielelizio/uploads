@@ -56,7 +56,7 @@
                     </div>
                   </label>
 
-                  <p><a class="ls-login-forgot" href="#">Esqueci minha senha</a></p>
+                  <p><a class="ls-login-forgot" href="esqueci-senha.php">Esqueci minha senha</a></p>
                   <br>  
                   <input type="submit" value="Entrar" class="btn btn-success ls-btn-block btn-lg">
 

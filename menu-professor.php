@@ -44,41 +44,6 @@
 	</div>
     </nav>  
   
-<!-- Modal -->
-<div class="modal fade" id="editPassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 style="color: #f15c2f;" class="modal-title" id="exampleModalLabel">Alterar Senha </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="alterar_senha.php" class="ls-form" method="post">
-      <div style="background: #efe7e7;" class="modal-body">
-      <label class="ls-label">
-            <b class="ls-label-text">Senha Antiga *</b>
-            <input class="border border-success" type="password" name="senha_antiga" required placeholder="Digite sua senha atual" />
-          </label>
-          <label class="ls-label">
-            <b class="ls-label-text"> Nova Senha *</b>
-            <input class="border border-success" type="password" name="new_password" required placeholder="Digite a nova senha" />
-          </label>
-          <label class="ls-label">
-            <b class="ls-label-text"> Confirmação de senha *</b>
-            <input class="border border-success" type="password" name="confirmar_senha" required placeholder="Confirmar nova senha" />
-          </label>
-
-      </div>
-      <div style="background: #efe7e7;" class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
-        <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="salvar" value="salvar">
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
     
 <!-- <li><a href="http://<?php //echo $_SERVER['SERVER_NAME']; ?>/uploads/upload/index.php" class="ls-ico-upload" title="">Uploads</a></li>

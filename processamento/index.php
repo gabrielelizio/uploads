@@ -25,14 +25,14 @@ include_once("../lib/conexao_banco.php");
  </head>
   <body>
 
-
-<?php
+  <?php
   if($_SESSION["nivel"] == 1){
       require_once("../menu-professor.php");
   }else{
       require_once("../menu-sicp.php");
   }
 ?>
+
 
 <div class="pt-2"></div>
 	<div class=" container-fluid pt-5">

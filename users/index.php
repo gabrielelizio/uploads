@@ -27,8 +27,6 @@ include_once ("../variables_global.php");
   <body>
 
 
-<?php  include_once ("../notification_bars.php"); ?>
-
 
 <?php
   if($_SESSION["nivel"] == 1){

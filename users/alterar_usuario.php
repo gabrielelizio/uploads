@@ -148,15 +148,15 @@ $email = $linha["email"];
       <div style="background: #efe7e7;" class="modal-body">
       <label class="ls-label">
             <b class="ls-label-text">Senha Antiga *</b>
-            <input class="border border-success" type="password" name="senha_antiga" required placeholder="Digite sua senha atual" />
+            <input class="border border-success" type="password" name="senha_atual" required placeholder="Digite sua senha atual" />
           </label>
           <label class="ls-label">
             <b class="ls-label-text"> Nova Senha *</b>
-            <input class="border border-success" type="password" name="new_password" required placeholder="Digite a nova senha" />
+            <input class="border border-success" type="password" name="senha_nova" required placeholder="Digite a nova senha" />
           </label>
           <label class="ls-label">
             <b class="ls-label-text"> Confirmação de senha *</b>
-            <input class="border border-success" type="password" name="confirmar_senha" required placeholder="Confirmar nova senha" />
+            <input class="border border-success" type="password" name="confirme_senha" required placeholder="Confirmar nova senha" />
           </label>
 
       </div>

@@ -65,21 +65,29 @@
 			<div class="col-sm-10">
 
 			<form action="save.php" method="post" enctype="multipart/form-data" class="ls-form ls-form-horizontal row">
-
-			<label class="ls-label">
+			<div class="row">
+				
+				<div class="col-sm-10">
+				<label class="ls-label">
 				<b class="ls-label-text">Nome</b>
 				<p class="ls-label-info"></p>
-				<input class="col-sm-8" style="background: #efe7e7;" type="text" name="nome" readonly value="<?= $nomeUpload ?>" required >
+				<input class="col-12" style="background: #efe7e7;" type="text" name="nome" readonly value="<?= $nomeUpload ?>" required >
+				
+				</label>
+				</div>
+				<div class="col-sm-2">
 				<a href="alterar_usuario.php" class="ls-tooltip-right btn btn-info btn-sm"  aria-label="Editar usuário"><i class="ls-ico-pencil"></i> </a>
-			</label>
-			
-			<label class="ls-label  ">
+				</div>
+				<div class="col-sm-10">
+				<label class="ls-label  ">
 				<b class="ls-label-text">E-mail</b>
 				<p class="ls-label-info"></p>
-				<input class="col-sm-8" style="background: #efe7e7;" type="text" name="email" readonly value="<?= $emailUpload ?>" required >
+				<input class="col-12" style="background: #efe7e7;" type="text" name="email" readonly value="<?= $emailUpload ?>" required >
 			</label>
 
-			<input style="background: #efe7e7;" type="hidden" name="telefone" readonly value="<?= $telUpload ?>" required >
+				</div>
+			</div>
+			
 			</div>
 			<div class="col-sm-1"></div>
 		</div>
@@ -356,7 +364,7 @@
 <div class="row pt-5">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-2">
-		<button class="btn btn-success col-12">Salvar</button>
+	<button class="btn btn-success col-12">Salvar</button>
 	</div>
 	<div class="col-sm-2">
 		<button class="ls-btn-danger col-12">Limpar</button>
