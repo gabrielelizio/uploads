@@ -61,19 +61,15 @@ $telefone = $linha["phone"];
 $email = $linha["email"];
 
 }
-<<<<<<< HEAD
     ?>
  
 
-=======
-		?>
->>>>>>> ea938f827f566a5018410fad0f4411937310e795
     <!-- formulario de cadastro d eusuarios -->
     <div class=" row ">
           <div class="col-sm-3"></div>
             <div class=" hiden col-sm-6 pt-5 border border-secondary" id="box1">
             <table>
-            <form action="save.php" method="post">
+            <form action="#" method="post">
                 <div class="row">
                   <div class="col-sm-2"></div>
                   <div class="form-group col-sm-6">
@@ -135,7 +131,6 @@ $email = $linha["email"];
               </div>
           <div class="col-sm-2"></div>
         </div> <!-- fim div clas row -->
-<<<<<<< HEAD
         <div class="pt-5 pb-5"></div>
 
 
@@ -178,9 +173,3 @@ $email = $linha["email"];
         <script type="text/javascript" src="../javascripts/jquery.js"></script>
 			<script type="text/javascript" src="../javascripts/locastyle.js"></script>
 			<script type="text/javascript" src="../javascripts/bootstrap.bundle.min.js"></script>
-=======
-				<div class="pt-5 pb-5"></div>
-
-
-
->>>>>>> ea938f827f566a5018410fad0f4411937310e795

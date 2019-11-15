@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  <title>Tela de Login</title>
+  <title>Upload de Arquivos</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <link href="stylesheets/locastyle.css" rel="stylesheet" type="text/css">
@@ -26,6 +26,13 @@
 </head>
 <body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index container-fluid">
   
+<!-- SISTEMA DESENVOLVIDO POR ALUNOS DO LABORATORIO DE SOLUÇÕES PITAGORAS CONTAGEM 2019.06 
+    GABRIEL - gabrielelizio@hotmail.com
+    LUCAS - lucas03188@hotmail.com
+
+-->
+
+
 <div id="fundo-externo"></div>
     <div id="fundo">
         <img class="img-responsive " src="../images/bg_login.jpg" alt="" />
@@ -71,6 +78,7 @@
     <div class="col-sm-4 col-md-4"></div>
   </div>
 </div>
+
 
 
  <script type="text/javascript" src="javascripts/jquery.js"></script>
