@@ -21,14 +21,14 @@
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="stylesheet" href="css/estilo.css">
   <style>
-  
+
   </style>
 </head>
 <body class="documentacao documentacao_exemplos documentacao_exemplos_login-screen documentacao_exemplos_login-screen_index container-fluid">
-  
-<!-- SISTEMA DESENVOLVIDO POR ALUNOS DO LABORATORIO DE SOLUÇÕES PITAGORAS CONTAGEM 2019.06 
-    GABRIEL - gabrielelizio@hotmail.com
-    LUCAS - lucas03188@hotmail.com
+
+<!-- SISTEMA DESENVOLVIDO POR ALUNOS DO LABORATORIO DE SOLUÇÕES PITAGORAS CONTAGEM 2019.06
+    GABRIEL ELIZIO - gabrielelizio@hotmail.com
+    LUCAS VINICIOS- lucas03188@hotmail.com
 
 -->
 
@@ -56,7 +56,7 @@
                   <input class="ls-login-bg-user ls-field-lg" name="email" type="text" placeholder="Seu email professor" required autofocus>
                   </label>
                   <label class="ls-label">
-                    <b class="text-success">Senha</b> 
+                    <b class="text-success">Senha</b>
                     <div class="ls-prefix-group ls-field-lg">
                       <input id="password_field" class="ls-login-bg-password" name="pass" type="password" placeholder="Sua Senha" required>
                       <a class="ls-label-text-prefix ls-toggle-pass ls-ico-eye" data-toggle-class="ls-ico-eye, ls-ico-eye-blocked" data-target="#password_field" href="#"></a>
@@ -64,12 +64,12 @@
                   </label>
 
                   <p><a class="ls-login-forgot" href="esqueci-senha.php">Esqueci minha senha</a></p>
-                  <br>  
+                  <br>
                   <input type="submit" value="Entrar" class="btn btn-success ls-btn-block btn-lg">
 
                   </form>
                 </div>
-                
+
                 </div>
             </div>
           </div>
