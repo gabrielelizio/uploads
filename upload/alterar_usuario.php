@@ -36,14 +36,15 @@
 	<div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-upload pl-5 text-center "> Editar perfil </h1>
   </div>
-  
+
  <div class="row container">
+				<div class="pt-5 pb-5"></div>
    <div class="col-sm-4"></div>
    <div class="col-sm-4 pt-5">
    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#editPassword"> <span class="text-left"> Alterar Senha </span>   </a>
    </div>
  <div class="col-sm-4"></div>
- </div> 
+ </div>
 
 	<div class="container pt-5">
 
@@ -62,14 +63,15 @@ $email = $linha["email"];
 
 }
     ?>
- 
+
 
     <!-- formulario de cadastro d eusuarios -->
     <div class=" row ">
           <div class="col-sm-3"></div>
             <div class=" hiden col-sm-6 pt-5 border border-secondary" id="box1">
+
             <table>
-            <form action="#" method="post">
+            <form action="update_professor.php" method="post">
                 <div class="row">
                   <div class="col-sm-2"></div>
                   <div class="form-group col-sm-6">
@@ -78,7 +80,7 @@ $email = $linha["email"];
                     placeholder="" autocomplete="off" required name="firstname">
                   </div>
                 </div>
-    
+
 
                 <div class="row">
                   <div class="col-sm-2"></div>
@@ -130,8 +132,10 @@ $email = $linha["email"];
             </table>
               </div>
           <div class="col-sm-2"></div>
-        </div> <!-- fim div clas row -->
-        <div class="pt-5 pb-5"></div>
+				</div> <!-- fim div clas row -->
+
+
+
 
 
         <!-- Modal -->
@@ -163,7 +167,7 @@ $email = $linha["email"];
       <div style="background: #efe7e7;" class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
         <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="salvar" value="salvar">
-        
+
       </div>
     </div>
   </div>

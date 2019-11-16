@@ -43,12 +43,12 @@
    <a href="#" class="btn btn-info" data-toggle="modal" data-target="#alterar"> <span class="text-left"> Alterar Senha </span>   </a>
    </div>
  <div class="col-sm-4"></div>
- </div> 
+ </div>
 
 	<div class="container pt-5">
 
-    <?php 
-    
+    <?php
+
 $sql = "SELECT * FROM users where id = $idUpload";
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 while($linha=mysql_fetch_array($resultado))
@@ -62,14 +62,14 @@ $email = $linha["email"];
 
 }
     ?>
- 
+
 
     <!-- formulario de cadastro d eusuarios -->
     <div class=" row ">
           <div class="col-sm-3"></div>
             <div class=" hiden col-sm-6 pt-5 border border-secondary" id="box1">
             <table>
-            <form action="save.php" method="post"> 
+            <form action="update_scip.php" method="post">
                 <div class="row">
                   <div class="col-sm-2"></div>
                   <div class="form-group col-sm-6">
@@ -78,7 +78,7 @@ $email = $linha["email"];
                     placeholder="" autocomplete="off" required name="firstname">
                   </div>
                 </div>
-    
+
 
                 <div class="row">
                   <div class="col-sm-2"></div>
@@ -103,7 +103,7 @@ $email = $linha["email"];
                   <div class="col-sm-2"></div>
                   <div class="form-group col-sm-6">
                     <label class="text-success"> Telefone: </label>
-                    <input type="text" class="form-control border-primary" id="phone" name="phone" 
+                    <input type="text" class="form-control border-primary" id="phone" name="phone"
                     value="<?php echo $telefone; ?>" autocomplete="off" required>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ $email = $linha["email"];
       <div style="background: #efe7e7;" class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancelar </button>
         <input  style="background-color: #f15c2f;" type="submit" class="btn btn-primary" name="salvar" value="salvar">
-        
+
       </div>
     </div>
   </div>
