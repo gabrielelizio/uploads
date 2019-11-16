@@ -28,13 +28,13 @@ include_once ("../variables_global.php");
 
 
 
-<?php
-  if($_SESSION["nivel"] == 1){
-      require_once ("../menu-professor.php");
-  }else{
-      require_once ("../menu-sicp.php");
-  }
-?>
+  <?php
+		if($_SESSION["nivel"] == 1){
+				require_once("../menu-professor.php");
+		}else{
+				require_once("../menu-sicp.php");
+		}
+	?>
 
 <div class=" container-fluid pt-5">
 	<h1 class="ls-title-intro ls-ico-user pl-5 text-center"> Usuários </h1>
@@ -52,15 +52,18 @@ include_once ("../variables_global.php");
         <span class="ls-ico-user-add"> ADD Usuário</a></li>
 
     <li class="col-md-2 col-xs-6">
-      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba2"  class="ls-btn" data-ls-module="button">
+      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba2"  class="ls-btn" data-ls-module="button"
+      data-toggle="tooltip" data-placement="bottom" title="Listar usuários cadastrados">
       <span class="ls-ico-list"> Listar </span></a></li>
 
     <li class="col-md-2 col-xs-6">
-      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba3" class="ls-btn" data-ls-module="button">
+      <a href="#" onclick="mostrar_abas(this);" id="mostra_aba3" class="ls-btn" data-toggle="tooltip" data-placement="bottom" title="Excluir usuário"
+      data-ls-module="button">
       <span class="ls-ico-remove"></span></a></li>
 
       <li class="col-md-2 col-xs-6">
-      <a href="alterar_usuario.php"  class="ls-tooltip-right ls-btn" aria-label="Editar usuário" >
+      <a href="alterar_usuario.php"  class="ls-tooltip-right ls-btn" data-toggle="tooltip" data-placement="bottom" 
+      title="Editar Perfil" >
       <span class="ls-ico-pencil"></span></a></li>
   </ul>
 
@@ -110,6 +113,8 @@ Usuário excluído com sucesso !!
 </div>
 
 <?php  }  ?>
+
+
 
  <!-- formulario de cadastro d eusuarios -->
         <div class=" row pt-5 ">

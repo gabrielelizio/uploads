@@ -151,7 +151,7 @@ $email = $linha["email"];
       <form action="alterar_senha.php" class="ls-form" method="post">
       <div style="background: #efe7e7;" class="modal-body">
       <label class="ls-label">
-            <b class="ls-label-text">Senha Antiga *</b>
+            <b class="ls-label-text">Senha Atual *</b>
             <input class="border border-success" type="password" name="senha_atual" required placeholder="Digite sua senha atual" />
           </label>
           <label class="ls-label">

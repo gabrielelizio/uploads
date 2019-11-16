@@ -30,17 +30,17 @@
             <h6> Usuários </h6> </a>
         </li>
 
-					<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown" data-toggle="dropdown"
+			<li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="menu_dropdown2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="font-size: 12pt;">  Sair </a>
 
-          <div style="background-color: black;" class="dropdown-menu text-center">
-          
-          <a href="../logout.php" class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
-          </div>
-          </li>
+        <div style="background-color: black;" class="dropdown-menu text-center">
+    
+        <a href="../logout.php"  class="dropdown-link"> <span class="text-left text-light"> Encerrar Sessão </span> </a> <br>
+        </div>
+        </li>
 
-          </ul>
+        </ul>
 			</div>
     </nav>
 
