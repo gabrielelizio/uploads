@@ -61,8 +61,8 @@
 		</div>
 
 		<div class="row pt-5">
-			<div class="col-sm-1"></div>
-			<div class="col-sm-10">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
 
 			<form action="save.php" method="post" enctype="multipart/form-data" class="ls-form ls-form-horizontal row">
 			<div class="row">

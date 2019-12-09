@@ -59,6 +59,26 @@ include_once("../lib/conexao_banco.php");
   </div>
 <hr>
 
+<!-- Mensagem 2 -->
+<?php if(isset($_GET['sucesso2'])){ ?>
+
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-4 ">
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+Registro excluído com sucesso !!
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+
+</div>
+<div class="col-3"></div>
+</div>
+
+<?php  } ?>
+
 
 <div class="container-fluid">
   <div class="row pt-5 pl-5 pr-5">
@@ -74,6 +94,9 @@ include_once("../lib/conexao_banco.php");
       <th class="text-center text-light text-primary">Dia da semana </th>
       <th class="text-center text-light text-primary">Quantidade</th>
       <th class="text-center text-light text-primary">Arquivo</th>
+      <th class="text-center text-light text-primary"></th>
+      
+      
      <!-- <th class="text-center text-light text-primary">Excluir</th>  add opção de excluir registro -->  
       <th></th>
     </tr>
@@ -90,6 +113,8 @@ if($_SESSION["nivel"] == 1){
 $resultado=conecta($maquina,$usuario,$senha,$banco,$sql);
 while($linha=mysql_fetch_array($resultado))
 {
+
+$id_registro = $linha["id"];
 $nome = $linha["nome"];
 $email = $linha["email"];
 $telefone = $linha["telefone"];
@@ -131,6 +156,8 @@ echo "
         <td class='ls-txt-center'>$dia_semana</td>
         <td class='ls-txt-center'>$qtdecopias</td>
         <td class='ls-txt-center'><a href='../upload/$patharq' target='_new'>Abrir</a></td>
+        <td><a title='Remover Registro' href=". 'excluir_registro.php?excluir='."$id_registro".'' ."> 
+        <i class='ls-txt-center ls-ico-remove'> </i> </a></td>
         <td class='ls-txt-right ls-regroup'><a href='#'></a>
         </td>
       </tr>
